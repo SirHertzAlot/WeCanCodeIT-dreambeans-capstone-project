@@ -1,9 +1,12 @@
 package com.dream_beans.coffee.models;
 
+import java.util.Collection;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -26,6 +29,9 @@ public class Inventory {
     protected Inventory() {
 
     }
+
+    @OneToMany(mappedBy = "Inventory")
+    private Collection<Menu> coffee;
 
     public Inventory(long id, String name, int amount, String imageUrl) {
         this.id = id;
