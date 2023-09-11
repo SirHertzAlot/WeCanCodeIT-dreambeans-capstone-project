@@ -10,14 +10,14 @@ import jakarta.persistence.Table;
 @Table(name = "Coffee_Inventory")
 public class Inventory {
 
-    @GeneratedValue
     @Id
+    @GeneratedValue
     private long id;
 
-    @Column
+    @Column(name = "name")
     private String name;
 
-    @Column
+    @Column(name = "image")
     private String imageUrl;
 
     @Column(name = "amount", nullable = true)
