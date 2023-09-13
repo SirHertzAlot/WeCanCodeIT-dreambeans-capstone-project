@@ -1,56 +1,94 @@
 * {
   box-sizing: border-box;
   padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 header img {
   width: 200px;
   overflow: hidden;
 }
-li,
-a {
-  font-family: sans-serif;
-  font-weight: 500;
-  font-size: 16px;
+li {
+  list-style: none;
+}
+a{
   color: black;
   text-decoration: none;
-  display: inline-block;
 }
-header {
+.navbar{
+  min-height: 70px;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+}
+.nav-menu {
+  list-style: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 10%;
+  gap: 30px;
 }
-.dream-bean {
+.link{
+  transition: 0.7s ease;
+}
+.link:hover {
+  color: rgb(58, 30, 1);
+}
+.hamburger{
+  display: none;
   cursor: pointer;
-  margin: 0;
 }
-nav {
-  order: 3;
+.bar{
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: black;
 }
-.nav_link {
-  list-style: none;
-  
+
+@media(max-width:768px){
+  .hamburger{
+    display: block;
+  }
+  .hamburger.active .bar:nth-child(2){
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .nav-menu{
+    position: fixed;
+    left:-100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    background-color: #ffffff;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+  .nav-item{
+    margin: 16px 0;
+  }
+  .nav-menu.active{
+    left: 0;
+  }
 }
-.nav_link li {
-  display: inline-block;
-  padding: 0px 20px;
-}
-.nav_link li a {
-  transition: all 0.3s ease 0s;
-  font-weight: 600;
-}
-.nav_link li a :hover {
-  color: rgb(87, 62, 38);
-}
-.nav_link .shop {
+
+.nav-menu .link {
   position: relative;
   text-align: right;
 }
-.nav_link li img {
+.link img {
   width: 40px;
 }
-.nav_link .shop span {
+.nav-menu .link span {
   background-color: red;
   border-radius: 50%;
   display: flex;
