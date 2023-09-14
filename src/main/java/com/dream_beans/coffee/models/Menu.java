@@ -18,6 +18,9 @@ public class Menu {
     @Column(name = "name")
     private String name;
 
+    @Column(name= "size")
+    private String size;
+
     @Column(name = "price")
     private float price;
 
@@ -27,24 +30,20 @@ public class Menu {
     @Column(name = "image")
     private String image;
 
-
     @ManyToOne
     private Inventory inventory;
 
     public Menu() {
     }
 
-
-
-    public Menu(long id, String name, float price, String description, String image) {
+    public Menu(long id, String name, String size, float price, String description, String image) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.description = description;
         this.image = image;
+        this.size = size;
     }
-
-
 
     public long getId() {
         return id;
@@ -60,6 +59,16 @@ public class Menu {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
     }
 
     public float getPrice() {
@@ -86,6 +95,4 @@ public class Menu {
         this.image = image;
     }
 
-    
-    
 }
