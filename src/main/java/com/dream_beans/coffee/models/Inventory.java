@@ -30,9 +30,7 @@ public class Inventory {
 
     }
 
-    @OneToMany(mappedBy = "Inventory")
-    private Collection<Menu> coffee;
-
+ 
     public Inventory(long id, String name, int amount, String imageUrl) {
         this.id = id;
         this.name = name;

@@ -12,19 +12,5 @@ public class CoffeeApplication {
 		SpringApplication.run(CoffeeApplication.class, args);
 	}
 
-	@Bean
-	CommandLineRunner CommandLineRunner(ProductRepository pRepo){
-		return arg -> {
-
-			
-
-
-
-
-
-		};
-
-	}
-
 
 }

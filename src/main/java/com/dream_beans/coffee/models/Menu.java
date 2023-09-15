@@ -30,8 +30,8 @@ public class Menu {
     @Column(name = "image")
     private String image;
 
-    @ManyToOne
-    private Inventory inventory;
+    @OneToMany
+   private List<Product> products;
 
     public Menu() {
     }
