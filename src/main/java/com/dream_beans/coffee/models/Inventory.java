@@ -1,6 +1,7 @@
 package com.dream_beans.coffee.models;
 
 import java.util.Collection;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -29,6 +30,9 @@ public class Inventory {
     protected Inventory() {
 
     }
+
+    @OneToMany
+   private List<Product> products;
 
  
     public Inventory(long id, String name, int amount, String imageUrl) {
