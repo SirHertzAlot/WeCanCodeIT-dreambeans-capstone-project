@@ -1,15 +1,20 @@
 package com.dream_beans.coffee;
+import javax.persistence.Entity;
+import java.util.UUID;
+import javax.persistence.Id;
 
-public class ProductClassModel {
+@Entity
+public class Product {
+    @Id
+    private String id;
 
     private int price;
-    private int id;
     private String description;
     private String name;
     private String size;
 
-    public ProductClassModel() {
-
+    public Product() {
+        this.id = UUID.randomUUID().toString();
     }
 
     public int getPrice() {
@@ -20,13 +25,13 @@ public class ProductClassModel {
         this.price = price;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    // public void setId(int id) {
+    // this.id = id;
+    // }
 
     public String getDescription() {
         return description;
