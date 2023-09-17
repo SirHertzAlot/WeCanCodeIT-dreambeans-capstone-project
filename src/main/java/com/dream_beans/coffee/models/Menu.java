@@ -39,8 +39,8 @@ public class Menu {
     public Menu() {
     }
 
-    public Menu(long id, String name, String size, float price, String description, String image) {
-        this.id = id;
+    public Menu(String name, String size, float price, String description, String image) {
+        
         this.name = name;
         this.price = price;
         this.description = description;

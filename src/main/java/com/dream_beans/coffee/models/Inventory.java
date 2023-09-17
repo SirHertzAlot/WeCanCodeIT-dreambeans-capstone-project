@@ -35,8 +35,8 @@ public class Inventory {
    private List<Product> products;
 
  
-    public Inventory(long id, String name, int amount, String imageUrl) {
-        this.id = id;
+    public Inventory(String name, int amount, String imageUrl) {
+        
         this.name = name;
         this.amount = amount;
         this.imageUrl = imageUrl;
