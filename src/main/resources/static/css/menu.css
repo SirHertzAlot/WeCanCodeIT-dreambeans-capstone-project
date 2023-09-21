@@ -28,11 +28,11 @@ a {
   box-shadow: 1px 0px 19px 2px rgb(115, 115, 115);
   margin: 2rem;
   background-color: #ffffff;
+  
 }
 .content {
   height: 60%;
   width: 100%;
-  position: relative;
   background-color: #f5ddc9;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -75,6 +75,10 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.add_to_basket button {
+  background: transparent;
+  border: none;
 }
 .add_to_basket i {
   color: rgb(0, 0, 0);
