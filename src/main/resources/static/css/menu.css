@@ -47,14 +47,14 @@ a {
   right: 1rem;
   overflow: hidden;
 }
-.product_desc {
+.item-desc {
   width: 98.5%;
   min-height: 30%;
   display: flex;
   justify-content: center;
   position: relative;
 }
-.background {
+.item-background {
   content: "";
   position: absolute;
   width: 100px;
@@ -92,10 +92,16 @@ a {
   top: 20%;
   text-align: center;
 }
-.item_name {
+.item-name {
   font-size: 16px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   display: block;
   font-weight: 600;
+}
+.description .increment, .decrement{
+border: none;
+width: 30px;
+height: 25px;
+text-align: center;
 }
