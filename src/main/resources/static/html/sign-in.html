@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/menu.css" />
     <title>Document</title>
 </head>
+
 <body>
     <header>
         <nav class="navbar">
@@ -32,13 +33,34 @@
                         <span class="quantity">0</span></a>
                 </li>
             </ul>
-        <div class="hamburger">
-            <span class="bar"></span></a>
-            <span class="bar"></span></a>
-            <span class="bar"></span></a>
-        </div>
+            <div class="hamburger">
+                <span class="bar"></span></a>
+                <span class="bar"></span></a>
+                <span class="bar"></span></a>
+            </div>
         </nav>
     </header>
+    <div class="main-content">
+        <div class="side-section"></div>
+            <div class="mid-section">
+                <div class="sign-in">
+                    <label for="name">Username: </label>
+                    <br>
+                    <input type="text" name="user name" id="user name" required />
+                </div>
+                <div class="sign-in">
+                    <label for="password">Password: </label>
+                    <br>
+                    <input type="text" name="password" id="password" required />
+                </div>
+                <div class="sign-in">
+                    <button type="submit">Sign Up</button>
+                    <button type="submit">Sign In</button>
+                </div>
+        </div>
+        <div class="side-section"></div>
+    </div>
     <script src="../js/script.js"></script>
 </body>
+
 </html>
