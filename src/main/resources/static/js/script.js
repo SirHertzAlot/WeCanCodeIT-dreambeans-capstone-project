@@ -12,20 +12,6 @@ document.querySelectorAll(".link").forEach((n) =>
   })
 );
 
-
-document.querySelectorAll('.add-button').forEach(button =>{
-    button.addEventListener('click', ()=>{
-        addToCart();
-    })
-})
-
-function addToCart(){
-    let cartQtyElement = document.getElementsByClassName(".cartQuantity");
-    let cartQty = parseInt(cartQtyElement.textContent);
-    cartQty++;
-    cartQtyElement.textContent = cartQty;
-}
-
 const sample_db = [
   {id: 1, name: "Item 1", price: 10.35, image: "../img/dream bean.png"},
   {id: 2, name: "Item 2", price: 10.99, image: "../img/dream bean.png"},
@@ -53,7 +39,10 @@ function createItemElement(item){
   itemBg.classList.add("item-background");
   const addToBasket = document.createElement("div");
   addToBasket.classList.add("add-to-cart");
-  addToBasket.innerHTML = `<button class="add-button"> Add to Cart </button>`;
+  const addButton = document.createElement("button");
+  addButton.classList.add("add-button");
+  addButton.innerHTML = ` Add to Basket `;
+  addToBasket.appendChild(addButton);
   itemBg.appendChild(addToBasket);
 
   const itemDesc = document.createElement("div");
@@ -83,5 +72,21 @@ function displayMenu(){
     itemList.appendChild(itemElement);
   });
 }
+
 displayMenu();
+
+//when add button is clicked will increment basket item qty
+document.querySelectorAll('.add-button').forEach(button =>{
+  button.addEventListener('click', () =>{
+      addToCart();
+  })
+})
+
+function addToCart(){
+  let cartQtyElement = document.querySelector(".cartQuantity");
+  let cartQty = parseInt(cartQtyElement.textContent);
+  cartQty++;
+  cartQtyElement.textContent = cartQty;
+}
 });
+

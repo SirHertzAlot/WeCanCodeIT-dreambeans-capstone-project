@@ -102,16 +102,16 @@
   }
   .nav-basket .link span {
     background-color: red;
-    border-radius: 50%;
+    border-radius: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     position: absolute;
     top: -5px;
-    left: 80%;
+    left: 60%;
     padding: 5px 10px;
-    font-size:x-small;
+    font-size: small;
   }
 .main-content{
     width: 100%;
