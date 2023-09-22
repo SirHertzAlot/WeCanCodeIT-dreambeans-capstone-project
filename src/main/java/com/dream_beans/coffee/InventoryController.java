@@ -31,6 +31,6 @@ public class InventoryController {
     public ResponseEntity<Product> addProduct(@RequestBody Product product) {
         Product _product = productRepository
                 .save(new Product());
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        return new ResponseEntity<>(HttpStatus.CREATED)
     }
 }
