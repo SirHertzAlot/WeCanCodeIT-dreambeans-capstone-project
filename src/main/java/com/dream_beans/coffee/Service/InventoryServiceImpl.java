@@ -1,6 +1,8 @@
-package com.dream_beans.coffee;
+package com.dream_beans.coffee.Service;
 
 import java.util.List;
+
+import com.dream_beans.coffee.Repository.InventoryRepository;
 
 public class InventoryServiceImpl implements InventoryService {
 

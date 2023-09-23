@@ -1,4 +1,4 @@
-package com.dream_beans.coffee;
+package com.dream_beans.coffee.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,8 +9,8 @@ public class Orders {
 
     @Id
     @GeneratedValue
-    private int ordersId;
-    private int customerId;
+    private long ordersId;
+    private long customerId;
     private String customerName;
     private String itemsOrdered;
     private int itemQuantity;

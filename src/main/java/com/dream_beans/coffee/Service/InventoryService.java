@@ -1,4 +1,4 @@
-package com.dream_beans.coffee;
+package com.dream_beans.coffee.Service;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.dream_beans.coffee;
+package com.dream_beans.coffee.models;
 import javax.persistence.Entity;
 import java.util.UUID;
 import javax.persistence.Id;
@@ -6,7 +6,7 @@ import javax.persistence.Id;
 @Entity
 public class Product {
     @Id
-    private String id;
+    private long id;
 
     private int price;
     private String description;
