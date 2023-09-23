@@ -19,14 +19,14 @@ public class Costumer {
     private String userName;
 
     @Column(name = "password")
-    private char password;
+    private String password;
 
     public Costumer() {
     }
 
     
 
-    public Costumer(String userName, char password) {
+    public Costumer(String userName, String password) {
         this.userName = userName;
         this.password = password;
     }
@@ -41,11 +41,11 @@ public class Costumer {
         this.userName = userName;
     }
 
-    public char getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(char password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
