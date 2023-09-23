@@ -4,8 +4,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.dream_beans.coffee.Orders;
 import com.dream_beans.coffee.OrdersService;
-import com.dream_beans.coffee.models.Orders;
 
 @RestController
 public class OrdersController {

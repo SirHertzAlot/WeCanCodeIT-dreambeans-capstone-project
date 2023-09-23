@@ -1,8 +1,11 @@
 package com.dream_beans.coffee;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import com.dream_beans.coffee.Repositories.OrdersRepository;
 
 @Component
 public class DatabaseLoader implements CommandLineRunner {
