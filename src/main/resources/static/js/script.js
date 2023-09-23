@@ -1,7 +1,7 @@
 const sample_db = [
-  { id: 1, name: "Item 1", price: 10.35, image: "../img/dream bean.png" },
-  { id: 2, name: "Item 2", price: 10.99, image: "../img/dream bean.png" },
-  { id: 3, name: "Item 3", price: 20.35, image: "../img/dream bean.png" },
+  { id: 1, name: "Item 1", price: 10.35, qty:1, image: "../img/dream bean.png" },
+  { id: 2, name: "Item 2", price: 10.99, qty:1, image: "../img/dream bean.png" },
+  { id: 3, name: "Item 3", price: 20.35, qty:3, image: "../img/dream bean.png" },
 ];
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -67,8 +67,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function displayMenu() {
     sample_db.forEach(function (item) {
-      const itemElement = createItemElement(item);
-      itemList.appendChild(itemElement);
+      const qty = item.qty;
+      if(qty > 0){
+        const itemElement = createItemElement(item);
+        itemList.appendChild(itemElement);
+      }
     });
   }
 
