@@ -1,14 +1,13 @@
 package com.dream_beans.coffee.models;
 
-import java.util.Collection;
 import java.util.List;
 
-import  javax.persistence.Column;
-import  javax.persistence.Entity;
-import  javax.persistence.GeneratedValue;
-import  javax.persistence.Id;
-import  javax.persistence.OneToMany;
-import  javax.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "Coffee_Inventory")
@@ -32,11 +31,10 @@ public class Inventory {
     }
 
     @OneToMany
-   private List<Product> products;
+    private List<Product> products;
 
- 
     public Inventory(String name, int amount, String imageUrl) {
-        
+
         this.name = name;
         this.amount = amount;
         this.imageUrl = imageUrl;

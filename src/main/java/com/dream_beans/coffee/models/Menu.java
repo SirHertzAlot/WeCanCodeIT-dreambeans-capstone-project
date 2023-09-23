@@ -6,7 +6,6 @@ import  javax.persistence.Column;
 import  javax.persistence.Entity;
 import  javax.persistence.GeneratedValue;
 import  javax.persistence.Id;
-import  javax.persistence.ManyToOne;
 import  javax.persistence.OneToMany;
 import  javax.persistence.Table;
 
@@ -35,7 +34,7 @@ public class Menu {
     private String image;
 
     @OneToMany
-   private List<Product> products;
+    private List<Product> products;
 
     public Menu() {
     }
