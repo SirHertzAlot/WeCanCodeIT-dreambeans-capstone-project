@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
     padding: 0;
-    margin: 0;
+    margin: 10px;
     box-sizing: border-box;
   }
   header img {
@@ -114,6 +114,7 @@
     font-size:x-small;
   }
 .main-content{
+    border-top: 60px;
     width: 100%;
     height: 850px;
     background-image: url("../img/bg.png");
@@ -139,9 +140,74 @@
   .side-section{
   width: 35%;
   }
-  .sign-in{
-    margin: 10% 20%;
-    padding: 3px;
-    justify-content: space-around;
+
+  .button-container {
+    margin-top: 20px;
     display: flex;
-  }
+    flex-direction: column;
+    gap: 20px;
+}
+
+.username {
+  margin: auto;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+#username{
+  width: 260px;
+  height: 35px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  align-content: center;
+  border-radius: 5px;
+} 
+
+.password {
+  margin: auto;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+#password {
+  width: 260px;
+  height: 35px;
+  text-align: center;
+  font-family:Arial, Helvetica, sans-serif;
+  align-content: center;
+  border-radius: 5px;
+}
+
+.sign-up, .sign-in {
+  margin-top: 25px;
+  margin: 10px 20px;
+  padding: 15px;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #4CAF50; 
+  color: #ffffff; 
+  border: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  transition: background-color 0.3s ease; 
+  gap: 30px;
+}
+
+.sign-up:hover, .sign-in:hover {
+  background-color: #45a049; 
+}
+
+
+
+
+
+
+
