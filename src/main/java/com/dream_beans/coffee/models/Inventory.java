@@ -3,6 +3,8 @@ package com.dream_beans.coffee.models;
 import java.util.Collection;
 import java.util.List;
 
+import com.dream_beans.coffee.Product;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
