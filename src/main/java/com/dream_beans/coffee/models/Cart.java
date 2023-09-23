@@ -1,4 +1,4 @@
-package com.dream_beans.coffee;
+package com.dream_beans.coffee.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

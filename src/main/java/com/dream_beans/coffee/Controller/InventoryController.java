@@ -1,9 +1,11 @@
-package com.dream_beans.coffee;
+package com.dream_beans.coffee.Controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.dream_beans.coffee.Service.InventoryServiceImpl;
 
 @RestController
 public class InventoryController {
