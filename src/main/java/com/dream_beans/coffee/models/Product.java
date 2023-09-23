@@ -1,13 +1,12 @@
 package com.dream_beans.coffee.models;
 import javax.persistence.Entity;
+
 import javax.persistence.Id;
 
 import jakarta.persistence.GeneratedValue;
 
 @Entity
-public class Product {
-   
-   
+public class Product { 
     @Id
     @GeneratedValue
     private long id;
@@ -16,10 +15,6 @@ public class Product {
     private String description;
     private String name;
     private String size;
-    
-    
-
-
     
     public Product(int price, String description, String name, String size) {
         
@@ -66,5 +61,4 @@ public class Product {
     }
 }
 
- 
-    
+

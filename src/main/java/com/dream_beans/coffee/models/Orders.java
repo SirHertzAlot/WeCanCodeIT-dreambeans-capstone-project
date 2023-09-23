@@ -9,8 +9,9 @@ public class Orders {
 
     @Id
     @GeneratedValue
-    private int ordersId;
-    private int customerId;
+
+    private long ordersId;
+    private long customerId;
     private String customerName;
     private String itemsOrdered;
     private int itemQuantity;
