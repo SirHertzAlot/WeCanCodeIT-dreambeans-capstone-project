@@ -20,10 +20,38 @@ public class InventoryController {
     }
 
     @GetMapping(value = "inventory")
+
     ResponseEntity<String> test(){
         return new ResponseEntity<>("Was this test successful?", HttpStatus.OK);
     }
 
     @ModelAttribute("/api/inventory")
-    public Iterable<Object> inventory() { return inventoryService.listEntireInventory(); }
+    public Iterable<Object> inventory() {
+        return inventoryService.listEntireInventory();
+    }
+
+    @PostMapping("/add")
+    public ResponseEntity<Product> addProduct(@RequestBody Product product) {
+        Product _product = productRepository
+                .save(new Product());
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Product> deleteProduct(@PathVariable("id") long id) {
+        Optional<Product> product = productRepository.findById(id);
+
+        if (product.isPresent()) {
+            Product p = new Product();
+            p.setId(id);
+            productRepository.delete(p);
+            return new ResponseEntity<>(p, HttpStatus.OK);
+        } else {
+            System.out.println("Id not found");
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
+        }
+
+    }
+
 }

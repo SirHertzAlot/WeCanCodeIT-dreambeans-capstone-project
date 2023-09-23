@@ -8,8 +8,8 @@ import javax.persistence.Id;
 public class Cart {
     @Id
     @GeneratedValue
-    private int cartId;
-    private int customerId;
+    private long cartId;
+    private long customerId;
     private String itemsInCart;
 
     private int quantityInCart;
@@ -20,7 +20,7 @@ public class Cart {
 
     protected Cart(){}
 
-    public Cart(int cartId, int customerId, String itemsInCart, int quantityInCart, float subTotalForCart, String timeCartWasCreated) {
+    public Cart(long cartId, long customerId, String itemsInCart, int quantityInCart, float subTotalForCart, String timeCartWasCreated) {
         this.cartId = cartId;
         this.customerId = customerId;
         this.itemsInCart = itemsInCart;
@@ -29,7 +29,7 @@ public class Cart {
         this.timeCartWasCreated = timeCartWasCreated;
     }
 
-    public int getCartId() {
+    public long getCartId() {
         return cartId;
     }
 
@@ -37,7 +37,7 @@ public class Cart {
         this.cartId = cartId;
     }
 
-    public int getCustomerId() {
+    public long getCustomerId() {
         return customerId;
     }
 

@@ -9,6 +9,7 @@ public class Orders {
 
     @Id
     @GeneratedValue
+
     private long ordersId;
     private long customerId;
     private String customerName;
@@ -20,7 +21,7 @@ public class Orders {
 
     protected Orders(){}
 
-    public Orders(int ordersId, int customerId, String customerName, String itemsOrdered, int itemQuantity, float cost, String orderedTime, String orderedDate){
+    public Orders(long ordersId, long customerId, String customerName, String itemsOrdered, int itemQuantity, float cost, String orderedTime, String orderedDate){
         ordersId = this.ordersId;
         customerId = this.customerId;
         customerName = this.customerName;
@@ -37,19 +38,19 @@ public class Orders {
                 ordersId, customerName, itemsOrdered, cost, orderedDate, orderedTime);
     }
 
-    public int getOrderId() {
+    public long getOrderId() {
         return ordersId;
     }
 
-    public void setOrderId(int orderId) {
+    public void setOrderId(long orderId) {
         this.ordersId = orderId;
     }
 
-    public int getCustomerId() {
+    public long getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(int customerId) {
+    public void setCustomerId(long customerId) {
         this.customerId = customerId;
     }
 
