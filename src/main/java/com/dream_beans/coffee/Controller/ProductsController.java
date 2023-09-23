@@ -1,3 +1,8 @@
+
+
+package com.dream_beans.coffee.Controller;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -6,6 +11,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+
+import com.dream_beans.coffee.Repositories.InventoryRepository;
 
 @RestController
 @RequestMapping("/products")
@@ -18,7 +26,8 @@ public class ProductsController {
         return Repository.findAll();
     }
 
-    @getMapping("/{id}")
+
+    @GetMapping("/{id}")
     public ResponseEntity<Product> getProductById(@PathVariable Long id) {
         Optional<Product> product = Repository.findById(id);
         if (product.isPresent()) {

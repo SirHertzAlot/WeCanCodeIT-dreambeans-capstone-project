@@ -9,6 +9,7 @@ public class Orders {
 
     @Id
     @GeneratedValue
+
     private long ordersId;
     private long customerId;
     private String customerName;
