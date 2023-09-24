@@ -15,11 +15,11 @@ public class OrdersController {
     public OrdersController(OrdersService ordersService) {
         this.ordersService = ordersService;
     }
-    @RequestMapping(value = "message", method = RequestMethod.GET)
-    public String orders(Model model) {
-        model.addAttribute("orders", ordersService.getAllOrders());
-        return "orders/list";
-    }
+    // @RequestMapping(value = "message", method = RequestMethod.GET)
+    // public String orders(Model model) {
+    //     model.addAttribute("orders", ordersService.getAllOrders());
+    //     return "orders/list";
+    // }
     @RequestMapping(value = "/api/orders", method = RequestMethod.GET)
     @ResponseBody
     public ModelAndView listAllOrders(){
