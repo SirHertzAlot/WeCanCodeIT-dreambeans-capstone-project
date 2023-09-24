@@ -1,9 +1,9 @@
-package com.dream_beans.coffee.Repository;
+package com.dreambeans.coffee.repositories;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.dream_beans.coffee.models.Orders;
+import com.dreambeans.coffee.models.Product;
 
 @Repository
 public interface ProductRepository extends CrudRepository<Product, Long> {

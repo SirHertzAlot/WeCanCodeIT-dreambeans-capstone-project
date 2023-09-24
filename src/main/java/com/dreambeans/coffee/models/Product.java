@@ -1,4 +1,4 @@
-package com.dream_beans.coffee.models;
+package com.dreambeans.coffee.models;
 import javax.persistence.Entity;
 
 import javax.persistence.Id;

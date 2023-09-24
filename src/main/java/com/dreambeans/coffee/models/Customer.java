@@ -1,37 +1,27 @@
-package com.dream_beans.coffee.models;
+package com.dreambeans.coffee.models;
 
-import  javax.persistence.Column;
-import  javax.persistence.Entity;
-import  javax.persistence.GeneratedValue;
-import  javax.persistence.Id;
-import  javax.persistence.Table;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
-@Table(name = "Coffee_Costumer")
-public class Costumer {
-
+public class Customer {
 
     @Id
     @GeneratedValue
     private long id;
 
-    @Column(name = "userName")
     private String userName;
 
-    @Column(name = "password")
     private String password;
 
-    public Costumer() {
+    public Customer() {
     }
 
-    
-
-    public Costumer(String userName, String password) {
+    public Customer(String userName, String password) {
         this.userName = userName;
         this.password = password;
     }
-
-
 
     public String getUserName() {
         return userName;
@@ -49,18 +39,12 @@ public class Costumer {
         this.password = password;
     }
 
-
-
     public long getId() {
         return id;
     }
-
-
 
     public void setId(long id) {
         this.id = id;
     }
 
-    
-    
 }

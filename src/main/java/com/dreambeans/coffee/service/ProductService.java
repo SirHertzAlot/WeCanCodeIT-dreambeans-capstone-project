@@ -1,10 +1,11 @@
-package com.dream_beans.coffee.Service;
+package com.dreambeans.coffee.service;
 
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.dream_beans.coffee.models.Product;
+import com.dreambeans.coffee.models.Product;
+import com.dreambeans.coffee.repositories.ProductRepository;
 
 @Service
 public class ProductService {

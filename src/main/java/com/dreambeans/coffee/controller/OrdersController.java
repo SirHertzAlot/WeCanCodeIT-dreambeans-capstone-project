@@ -1,11 +1,11 @@
-package com.dream_beans.coffee.Controller;
+package com.dreambeans.coffee.controller;
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.dream_beans.coffee.Service.OrdersService;
-import com.dream_beans.coffee.models.Orders;
+import com.dreambeans.coffee.models.Orders;
+import com.dreambeans.coffee.service.OrdersService;
 
 @RestController
 public class OrdersController {

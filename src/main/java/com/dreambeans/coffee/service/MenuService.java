@@ -1,13 +1,12 @@
-package com.dream_beans.coffee.Service;
+package com.dreambeans.coffee.service;
 
 
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-
-import com.dream_beans.coffee.Repositories.MenuRepository;
-import com.dream_beans.coffee.models.Menu;
+import com.dreambeans.coffee.models.Menu;
+import com.dreambeans.coffee.repositories.MenuRepository;
 
 
 @Service

@@ -1,11 +1,11 @@
-package com.dream_beans.coffee.Service;
+package com.dreambeans.coffee.service;
 
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.dream_beans.coffee.Repositories.CartRepository;
-import com.dream_beans.coffee.models.Cart;
+import com.dreambeans.coffee.models.Cart;
+import com.dreambeans.coffee.repositories.CartRepository;
 
 @Service
 public class CartService {
