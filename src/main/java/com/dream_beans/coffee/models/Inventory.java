@@ -2,28 +2,23 @@ package com.dream_beans.coffee.models;
 
 import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "Coffee_Inventory")
+
 public class Inventory {
 
     @Id
     @GeneratedValue
     private long id;
 
-    @Column(name = "name")
     private String name;
 
-    @Column(name = "image")
     private String imageUrl;
 
-    @Column(name = "amount", nullable = true)
     private int amount;
 
     protected Inventory() {

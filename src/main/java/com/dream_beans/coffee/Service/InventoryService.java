@@ -16,7 +16,7 @@ public class InventoryService{
         inventoryRepo.save(product);
     }
 
-	public List<Product> listEntireInventory() {
+	public Iterable<Product> listEntireInventory() {
         return inventoryRepo.findAll();
     }
 

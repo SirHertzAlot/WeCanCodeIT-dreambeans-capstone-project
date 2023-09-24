@@ -18,9 +18,11 @@ public class Cart {
 
     private String timeCartWasCreated;
 
-    protected Cart(){}
+    protected Cart() {
+    }
 
-    public Cart(long cartId, long customerId, String itemsInCart, int quantityInCart, float subTotalForCart, String timeCartWasCreated) {
+    public Cart(long cartId, long customerId, String itemsInCart, int quantityInCart, float subTotalForCart,
+            String timeCartWasCreated) {
         this.cartId = cartId;
         this.customerId = customerId;
         this.itemsInCart = itemsInCart;

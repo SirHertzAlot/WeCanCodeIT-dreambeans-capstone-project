@@ -2,35 +2,29 @@ package com.dream_beans.coffee.models;
 
 import java.util.List;
 
-import  javax.persistence.Column;
-import  javax.persistence.Entity;
-import  javax.persistence.GeneratedValue;
-import  javax.persistence.Id;
-import  javax.persistence.OneToMany;
-import  javax.persistence.Table;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 
 @Entity
-@Table(name = "menu")
+
 public class Menu {
 
     @Id
     @GeneratedValue
     private long id;
 
-    @Column(name = "name")
     private String name;
 
-    @Column(name= "size")
     private String size;
 
-    @Column(name = "price")
     private float price;
 
-    @Column(name = "description")
     private String description;
 
-    @Column(name = "image")
     private String image;
 
     @OneToMany
@@ -40,7 +34,7 @@ public class Menu {
     }
 
     public Menu(String name, String size, float price, String description, String image) {
-        
+
         this.name = name;
         this.price = price;
         this.description = description;
@@ -63,8 +57,6 @@ public class Menu {
     public void setName(String name) {
         this.name = name;
     }
-
-    
 
     public String getSize() {
         return size;

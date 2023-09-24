@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import com.dream_beans.coffee.Repositories.ProductRepository;
 import com.dream_beans.coffee.models.Product;
 
 @Service
