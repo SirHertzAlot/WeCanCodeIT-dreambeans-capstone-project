@@ -11,17 +11,17 @@ public class Product {
     @GeneratedValue
     private long id;
 
-    private int price;
+    private double price;
     private String description;
     private String name;
-    private String size;
+    private String image;
     
-    public Product(int price, String description, String name, String size) {
+    public Product(double price, String description, String name, String image) {
         
         this.price = price;
         this.description = description;
         this.name = name;
-        this.size = size;
+        this.image = image;
     }
 
 
@@ -35,10 +35,10 @@ public class Product {
     public void setId(long id) {
         this.id = id;
     }
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
     public String getDescription() {
@@ -53,11 +53,11 @@ public class Product {
     public void setName(String name) {
         this.name = name;
     }
-    public String getSize() {
-        return size;
+    public String getImage() {
+        return image;
     }
-    public void setSize(String size) {
-        this.size = size;
+    public void setImage(String image) {
+        this.image = image;
     }
 }
 
