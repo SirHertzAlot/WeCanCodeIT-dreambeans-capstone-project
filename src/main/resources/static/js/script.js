@@ -10,7 +10,7 @@ const sample_db = [
     id: 2,
     name: "Item 2",
     price: 10.99,
-    qty: 3,
+    qty: 2,
     image: "../img/dream bean.png",
   },
   {
@@ -24,7 +24,7 @@ const sample_db = [
     id: 3,
     name: "Item 3",
     price: 20.35,
-    qty: 3,
+    qty: 1,
     image: "../img/dream bean.png",
   },
   {
@@ -35,7 +35,7 @@ const sample_db = [
     image: "../img/dream bean.png",
   },
 ];
-
+//nav hamburger menu
 document.addEventListener("DOMContentLoaded", function () {
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".nav-menu");
@@ -50,7 +50,8 @@ document.addEventListener("DOMContentLoaded", function () {
       navMenu.classList.remove("active");
     })
   );
-  const itemList = document.getElementById("item-list");
+
+  //menu html
 
   function createItemElement(item) {
     const menuItem = document.createElement("div");
@@ -76,23 +77,27 @@ document.addEventListener("DOMContentLoaded", function () {
     itemDesc.classList.add("item-desc");
     const itemName = document.createElement("div");
     itemName.classList.add("item-name");
-    itemName.innerHTML = `<h3>${item.name}</h3>`;
+    itemName.innerHTML = `<h4>${item.name}</h4>`;
     itemDesc.appendChild(itemName);
     const itemPrice = document.createElement("div");
     itemPrice.classList.add("item-price");
     itemPrice.innerHTML = `$${item.price}`;
     itemDesc.appendChild(itemPrice);
-    // const itemQty= document.createElement("span");
-    // itemQty.classList.add("item-qty");
-    // itemQty.innerHTML = '${0}'
+    const itemQty = document.createElement("span");
+    itemQty.classList.add("item-qty");
+    itemQty.innerHTML = `<button class="decrement">-</button> 1 <button class="increment">+</button>`;
 
     itemContent.appendChild(itemBg);
     itemContent.appendChild(itemDesc);
+    itemDesc.appendChild(itemQty);
     menuItem.appendChild(menuContent);
     menuItem.appendChild(itemContent);
     return menuItem;
   }
 
+  const itemList = document.getElementsByClassName("item-list")[0];
+
+  //display menu
   function displayMenu() {
     sample_db.forEach(function (item) {
       const qty = item.qty;
@@ -105,24 +110,66 @@ document.addEventListener("DOMContentLoaded", function () {
 
   displayMenu();
 
-  //when add button is clicked will increment basket item qty
-  document.querySelectorAll(".add-button").forEach((button) => {
-    button.addEventListener("click", () => {
-      addToCart();
+  const cart = [];
+  const cartList = document.querySelector(".cart");
+  const cartSide = document.querySelector(".cart-side");
+  const closeCartBttn = document.querySelector(".close-bttn");
+  const cartBttn = document.querySelector(".cart-bttn");
+
+  document.querySelectorAll(".add-button").forEach(function (button) {
+    button.addEventListener("click", function () {
+      const itemContainer = button.closest(".menu-item");
+      const itemQtyAdd = parseInt(
+        itemContainer
+          .querySelector(".item-qty")
+          .textContent.trim()
+          .replace(" +", "")
+          .replace("- ", "")
+      );
+      console.log(itemQtyAdd)
+      let cartQtyElement = document.querySelector(".cartQuantity");
+      let cartQty = parseInt(cartQtyElement.textContent);
+      cartQty += itemQtyAdd;
+
+      cartQtyElement.textContent = cartQty;
+      const item = {
+        name: itemContainer.querySelector(".item-name h4").textContent,
+        price: parseFloat(
+          itemContainer
+            .querySelector(".item-price")
+            .textContent.replace("$", "")
+        ),
+        qty: itemQtyAdd,
+      };
+      addToCart(item);
     });
   });
 
-  function addToCart() {
-    let cartQtyElement = document.querySelector(".cartQuantity");
-    let cartQty = parseInt(cartQtyElement.textContent);
-    
-    cartQty++;
-    cartQtyElement.textContent = cartQty;
+  
+  function addToCart(item) {
+    cart.push(item);
+    updateCart();
   }
 
-  const cartList = document.getElementsByClassName("cart-list");
+  function updateCart() {
+    cartList.innerHTML = "";
 
-  let cart = [];
-  let cartTotal = 0;
-  
+    cart.forEach(function (item) {
+      const cartItem = document.createElement("li");
+      cartItem.textContent = `${item.name} - $${item.price} - ${item.qty}`;
+
+      cartList.appendChild(cartItem);
+    });
+  }
+
+  cartBttn.addEventListener("click", function () {
+    cartSide.classList.add("open");
+  });
+
+  closeCartBttn.addEventListener("click", function () {
+    cartSide.classList.remove("open");
+  });
+
+
+
 });
