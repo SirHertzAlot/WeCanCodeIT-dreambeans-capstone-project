@@ -1,3 +1,4 @@
+//example db
 const sample_db = [
   {
     id: 1,
@@ -37,6 +38,7 @@ const sample_db = [
 ];
 //nav hamburger menu
 document.addEventListener("DOMContentLoaded", function () {
+  console.log(sample_db);
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".nav-menu");
 
@@ -49,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
       hamburger.classList.remove("active");
       navMenu.classList.remove("active");
     })
-  );
+    );
 
   //menu html
 
@@ -83,9 +85,9 @@ document.addEventListener("DOMContentLoaded", function () {
     itemPrice.classList.add("item-price");
     itemPrice.innerHTML = `$${item.price}`;
     itemDesc.appendChild(itemPrice);
-    const itemQty = document.createElement("span");
+    const itemQty = document.createElement("div");
     itemQty.classList.add("item-qty");
-    itemQty.innerHTML = `<button class="decrement">-</button> 1 <button class="increment">+</button>`;
+    itemQty.innerHTML = `<button class="decrement">-</button><span class ="quantity" data-itemId=${item.id}> 1 </span><button class="increment">+</button>`;
 
     itemContent.appendChild(itemBg);
     itemContent.appendChild(itemDesc);
@@ -99,6 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //display menu
   function displayMenu() {
+    console.log(sample_db);
     sample_db.forEach(function (item) {
       const qty = item.qty;
       if (qty > 0) {
@@ -108,25 +111,30 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  displayMenu();
-
   const cart = [];
   const cartList = document.querySelector(".cart");
   const cartSide = document.querySelector(".cart-side");
   const closeCartBttn = document.querySelector(".close-bttn");
   const cartBttn = document.querySelector(".cart-bttn");
 
+  // button for cart
+  cartBttn.addEventListener("click", function () {
+    cartSide.classList.add("open");
+  });
+
+  closeCartBttn.addEventListener("click", function () {
+    cartSide.classList.remove("open");
+  });
+
+  displayMenu();
+  
+  //add item to cart when clicked
   document.querySelectorAll(".add-button").forEach(function (button) {
     button.addEventListener("click", function () {
       const itemContainer = button.closest(".menu-item");
       const itemQtyAdd = parseInt(
-        itemContainer
-          .querySelector(".item-qty")
-          .textContent.trim()
-          .replace(" +", "")
-          .replace("- ", "")
+        itemContainer.querySelector(".quantity").textContent
       );
-      console.log(itemQtyAdd)
       let cartQtyElement = document.querySelector(".cartQuantity");
       let cartQty = parseInt(cartQtyElement.textContent);
       cartQty += itemQtyAdd;
@@ -145,12 +153,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  
+  // const itemQty = button.parentElement.querySelector(".quantity");
+  // const itemId = itemQty.getAttribute("data-itemId");
+  // const itemIdQty = sample_db.find((item) => item.id === parseInt(itemId));
+  // if (itemIdQty) {
+
+  //   item.qty --;
+  // console.log(sample_db);
+  // }
+
+  //function to add item into the cart
   function addToCart(item) {
     cart.push(item);
     updateCart();
   }
 
+  //update cart function
   function updateCart() {
     cartList.innerHTML = "";
 
@@ -162,14 +180,28 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  cartBttn.addEventListener("click", function () {
-    cartSide.classList.add("open");
+  //increment button for every an item
+  document.querySelectorAll(".increment").forEach(function (button) {
+    button.addEventListener("click", function () {
+      const itemQty = button.parentElement.querySelector(".quantity");
+      const itemId = itemQty.getAttribute("data-itemId");
+      let currentQuantity = parseInt(itemQty.textContent);
+      currentQuantity++;
+      itemQty.textContent = currentQuantity;
+    });
   });
 
-  closeCartBttn.addEventListener("click", function () {
-    cartSide.classList.remove("open");
+  //decrement button for every an item
+  document.querySelectorAll(".decrement").forEach(function (button) {
+    button.addEventListener("click", function () {
+      const itemQty = button.parentElement.querySelector(".quantity");
+      const itemId = itemQty.getAttribute("data-itemId");
+      let currentQuantity = parseInt(itemQty.textContent);
+      if (currentQuantity > 0) {
+        currentQuantity--;
+        itemQty.textContent = currentQuantity;
+      }
+    });
   });
-
-
-
+  
 });

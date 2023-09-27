@@ -254,7 +254,7 @@ a {
   height: 30px;
   background-color: rgb(200, 161, 109);
   border-radius: 50%;
-  z-index: 1;
+  z-index: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -268,7 +268,7 @@ a {
 
 .item-desc {
   margin-top: 0.5rem;
-  z-index: 100;
+  z-index: 0;
   position: absolute;
   top: 20%;
   text-align: center;
@@ -343,7 +343,7 @@ a {
 
 .close-bttn {
   display: block;
-  margin: 20px auto;
+  margin: 25px auto;
   padding: 10px 20px;
   background-color: #ff5733;
   color: #fff;
