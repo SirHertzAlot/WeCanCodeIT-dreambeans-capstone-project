@@ -1,45 +1,37 @@
-package com.dream_beans.coffee.models;
+package com.dreambeans.coffee.models;
 
 import java.util.List;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
-@Table(name = "menu")
 public class Menu {
 
     @Id
     @GeneratedValue
     private long id;
 
-    @Column(name = "name")
     private String name;
 
-    @Column(name= "size")
     private String size;
 
-    @Column(name = "price")
     private float price;
 
-    @Column(name = "description")
     private String description;
 
-    @Column(name = "image")
     private String image;
 
-    @OneToMany
-   private List<Product> products;
+    // @OneToMany
+    // private List<Product> products;
 
     public Menu() {
     }
 
     public Menu(String name, String size, float price, String description, String image) {
-        
+
         this.name = name;
         this.price = price;
         this.description = description;
@@ -62,8 +54,6 @@ public class Menu {
     public void setName(String name) {
         this.name = name;
     }
-
-    
 
     public String getSize() {
         return size;

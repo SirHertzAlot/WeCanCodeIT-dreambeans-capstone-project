@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +8,8 @@
 </head>
 <body>
     <header>
+        <div class="logo"><img class="dream-bean" src="../img/mylogo.png" /></div>
         <nav class="navbar">
-            <img class="dream-bean" src="../img/mylogo.png" />
             <ul class="nav-menu">
                 <li class="nav-item">
                     <a href="index.html" class="link">Home</a>
@@ -26,21 +26,32 @@
                 <li class="nav-item">
                     <a href="sign-in.html" class="link">Sign In</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="link"><img src="../img/bag.svg">
-                        <span class="quantity">0</span></a>
-                </li>
             </ul>
         <div class="hamburger">
             <span class="bar"></span></a>
             <span class="bar"></span></a>
             <span class="bar"></span></a>
         </div>
-        </nav>
+        <div class="nav-basket">
+            <button class="cart-bttn">
+                <a href="#" class="link"><img src="../img/bag.svg">
+                    <span class="cartQuantity">0</span></a>
+            </button>
+        </div>
+    </nav>
     </header>
     <div class="main-content">
         
     </div>
+    
+    <aside class="cart-side">
+        <div class="cart-content">
+            <div class="cart-title">Your Cart</div>
+            <ul class="cart">
+            </ul>
+            <div class="cart-total">Total: $0.00</div>
+            <button class="close-bttn">Close Cart</button>
+    </aside>
     <script src="../js/script.js"></script>
 </body>
 </html>

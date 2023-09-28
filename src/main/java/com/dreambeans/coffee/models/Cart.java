@@ -1,4 +1,4 @@
-package com.dream_beans.coffee.models;
+package com.dreambeans.coffee.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,8 +8,8 @@ import javax.persistence.Id;
 public class Cart {
     @Id
     @GeneratedValue
-    private int cartId;
-    private int customerId;
+    private long cartId;
+    //private long customerId;
     private String itemsInCart;
 
     private int quantityInCart;
@@ -18,32 +18,33 @@ public class Cart {
 
     private String timeCartWasCreated;
 
-    protected Cart(){}
+    public Cart() {
+    }
 
-    public Cart(int cartId, int customerId, String itemsInCart, int quantityInCart, float subTotalForCart, String timeCartWasCreated) {
-        this.cartId = cartId;
-        this.customerId = customerId;
+    public Cart (String itemsInCart, int quantityInCart, float subTotalForCart,
+            String timeCartWasCreated) {
+        //this.customerId = customerId;
         this.itemsInCart = itemsInCart;
         this.quantityInCart = quantityInCart;
         this.subTotalForCart = subTotalForCart;
         this.timeCartWasCreated = timeCartWasCreated;
     }
 
-    public int getCartId() {
+    public long getCartId() {
         return cartId;
     }
 
-    public void setCartId(int cartId) {
+    public void setCartId(long cartId) {
         this.cartId = cartId;
     }
 
-    public int getCustomerId() {
-        return customerId;
-    }
+    // public long getCustomerId() {
+    //     return customerId;
+    // }
 
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
-    }
+    // public void setCustomerId(long customerId) {
+    //     this.customerId = customerId;
+    // }
 
     public String getItemsInCart() {
         return itemsInCart;
@@ -76,4 +77,5 @@ public class Cart {
     public void setTimeCartWasCreated(String timeCartWasCreated) {
         this.timeCartWasCreated = timeCartWasCreated;
     }
+
 }

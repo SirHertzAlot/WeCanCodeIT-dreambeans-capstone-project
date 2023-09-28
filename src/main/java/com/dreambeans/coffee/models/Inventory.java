@@ -1,45 +1,33 @@
-package com.dream_beans.coffee.models;
+package com.dreambeans.coffee.models;
 
-import java.util.Collection;
 import java.util.List;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
-@Table(name = "Coffee_Inventory")
+
 public class Inventory {
 
     @Id
     @GeneratedValue
     private long id;
 
-    @Column(name = "name")
     private String name;
 
-    @Column(name = "image")
     private String imageUrl;
 
-    @Column(name = "amount", nullable = true)
     private int amount;
 
-    protected Inventory() {
-
+    public Inventory() {
     }
 
-    @OneToMany
-   private List<Product> products;
-
- 
-    public Inventory(String name, int amount, String imageUrl) {
-        
+    public Inventory(String name, String imageUrl, int amount) {
         this.name = name;
-        this.amount = amount;
         this.imageUrl = imageUrl;
+        this.amount = amount;
     }
 
     public long getId() {
@@ -58,6 +46,14 @@ public class Inventory {
         this.name = name;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
     public int getAmount() {
         return amount;
     }
@@ -65,5 +61,7 @@ public class Inventory {
     public void setAmount(int amount) {
         this.amount = amount;
     }
+
+   
 
 }
