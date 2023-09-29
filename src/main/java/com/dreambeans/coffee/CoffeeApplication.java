@@ -16,7 +16,7 @@ public class CoffeeApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CoffeeApplication.class, args);
-
+		
 	}
 
 
