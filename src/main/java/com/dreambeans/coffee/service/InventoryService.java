@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import com.dreambeans.coffee.models.Inventory;
 import com.dreambeans.coffee.models.Product;
 import com.dreambeans.coffee.repositories.InventoryRepository;
 
@@ -16,9 +17,9 @@ public class InventoryService{
     //     inventoryRepo.save(product);
     // }
 
-	// public Iterable<Product> listEntireInventory() {
-    //     return inventoryRepo.findAll();
-    // }
+	public Iterable<Inventory> listEntireInventory() {
+        return inventoryRepo.findAll();
+    }
 
     // public Optional<Product> findProductById(Long id) {
     //     return inventoryRepo.findById(id);
