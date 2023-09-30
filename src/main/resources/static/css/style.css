@@ -139,6 +139,77 @@ a {
 body {
   background-color: #f8dfb8;
 }
+.username {
+  margin: auto;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+#username{
+  width: 75%;
+  height: 35px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  align-content: center;
+  border-radius: 5px;
+} 
+
+.password {
+  margin: auto;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+#password {
+  width: 75%;
+  height: 35px;
+  text-align: center;
+  font-family:Arial, Helvetica, sans-serif;
+  align-content: center;
+  border-radius: 5px;
+}
+.name {
+  margin: auto;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+#name {
+  width: 75%;
+  height: 35px;
+  text-align: center;
+  font-family:Arial, Helvetica, sans-serif;
+  align-content: center;
+  border-radius: 5px;
+}
+.sign-up, .sign-in {
+  width: 75%;
+  margin: auto;
+  margin-top: 25px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #4CAF50; 
+  color: #0000; 
+  border: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  position:inherit;
+  transition: background-color 0.3s ease; 
+  gap: 30px;
+  bottom: 10px
+}
+
+.sign-up:hover, .sign-in:hover {
+  background-color: #45a049; 
+}
 
 .main-content {
   width: 100%;
@@ -167,13 +238,13 @@ body {
 .side-section {
   width: 35%;
 }
-
+/* 
 .sign-in {
   margin: 10% 20%;
   padding: 3px;
   justify-content: space-around;
   display: flex;
-}
+} */
 
 .category {
   display: flex;
