@@ -242,13 +242,6 @@ body {
 .side-section {
   width: 35%;
 }
-/* 
-.sign-in {
-  margin: 10% 20%;
-  padding: 3px;
-  justify-content: space-around;
-  display: flex;
-} */
 
 .category {
   display: flex;
@@ -429,4 +422,18 @@ a {
 
 .close-bttn:hover {
   background-color: #ff0000;
+}
+
+.about-us {
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 30px;
+  padding: 20px;}
+
+.about-us h1,h2{
+  margin: 30px;
+  padding: 20px;
 }
