@@ -1,5 +1,6 @@
 package com.dreambeans.coffee.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -27,11 +28,14 @@ public class Menu {
     // @OneToMany
     // private List<Product> products;
 
+    private ArrayList<Product> products = new ArrayList<>();
+
     public Menu() {
     }
 
     public Menu(String name, String size, float price, String description, String image) {
 
+        
         this.name = name;
         this.price = price;
         this.description = description;
@@ -39,6 +43,14 @@ public class Menu {
         this.size = size;
     }
 
+    public void addProduct(Product product) {
+        products.add(product);
+    }
+
+    public ArrayList<Product> getProducts() {
+        return products;
+    }
+    
     public long getId() {
         return id;
     }

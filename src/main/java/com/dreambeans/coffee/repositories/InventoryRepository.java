@@ -8,4 +8,6 @@ import com.dreambeans.coffee.models.Inventory;
 @Repository
 public interface InventoryRepository extends CrudRepository<Inventory, Long> {
 
+    void addProduct(Product product);
+
 }
