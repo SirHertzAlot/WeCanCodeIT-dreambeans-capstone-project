@@ -425,15 +425,19 @@ a {
 }
 
 .about-us {
-  text-align: center;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  font-size: 30px;
-  padding: 20px;}
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 100vh;
+text-align: center;
+font-size: 30px;
+padding: 70px 80px;  
+}
 
 .about-us h1,h2{
   margin: 30px;
   padding: 20px;
+}
+.about-us img{
+  width: 600px;
 }
