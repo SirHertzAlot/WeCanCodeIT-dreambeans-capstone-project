@@ -1,7 +1,8 @@
-package com.dreambeans.coffee;
+/*package com.dreambeans.coffee;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.dreambeans.coffee.models.Product;
+import com.dreambeans.coffee.repositories.ProductRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -122,6 +123,6 @@ public class DatabaseLoader implements CommandLineRunner {
         productService.saveProduct(Almond_Milk);
         productRepo.save(Almond_Milk);
     }
-    }
+}*/
 
 
