@@ -8,10 +8,10 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@SpringBootApplication
-// @ComponentScan(basePackages = "com.dream_beans.coffee")
-// @EntityScan("com.dream_beans.coffee")
-// @EnableJpaRepositories("com.dream_beans.coffee")
+@SpringBootApplication 
+@ComponentScan(basePackages ={"com.dreambeans.coffee", "com.dreambeans.coffee.*"})
+@EntityScan({"com.dreambeans.coffee", "com.dreambeans.coffee.*"})
+// @EnableJpaRepositories({"com.dreambeans.coffee", "com.dreambeans.coffee.*"})
 public class CoffeeApplication {
 
 	public static void main(String[] args) {
