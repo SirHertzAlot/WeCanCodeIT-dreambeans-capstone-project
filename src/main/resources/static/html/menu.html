@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/menu.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
 <body>
     <header>
         <div class="logo"><img class="dream-bean" src="../img/mylogo.png" /></div>
@@ -34,14 +31,13 @@
                 <span class="bar"></span></a>
             </div>
             <div class="nav-basket">
-                <a href="#" class="link"><img src="../img/bag.svg">
-                <span class="cartQuantity">0</span></a>
+                <button class="cart-bttn">
+                    <div class="link"><img src="../img/bag.svg">
+                        <span class="cartQuantity">0</span></a>
+                </button>
             </div>
         </nav>
     </header>
-    <div id="cart-container">
-        <div class="cutomer-order"></div>
-    </div>
     <div class="category">
         <li><a href="#">Coffee</a></li>
         <li><a href="#">Pastry</a></li>
@@ -49,30 +45,17 @@
         <li><a href="#">Cold Beverage</a></li>
     </div>
     <div class="main-content">
-        <ul class="products">
-            <li class="item">
-                <div class="content">
-                    <img src="../img/dream bean.png" alt="latte" class="latte">
-                </div>
-                <div class="item-desc">
-                    <div class="item-background">
-                        <div class="add_to_basket">
-                            <button class="addCart">Add to Basket</button>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <div class="item-name">Latte</div>
-                        <div class="item-price">100</div>
-                        <button class="decrement">-</button>
-                        <span class="item-qty">1</span>
-                        <button class="increment">+</button>
-                    </div>
-                </div>
-            </li>
-        </ul>
+        <div class="item-list">
+        </div>
     </div>
-    </div>
+    <aside class="cart-side">
+        <div class="cart-content">
+            <div class="cart-title">Your Cart</div>
+            <ul class="cart">
+            </ul>
+            <div class="cart-total">Total: $0.00</div>
+            <button class="close-bttn">Close Cart</button>
+    </aside>
     <script src="../js/script.js"></script>
 </body>
-
 </html>

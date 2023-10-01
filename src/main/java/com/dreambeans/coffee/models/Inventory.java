@@ -1,5 +1,6 @@
 package com.dreambeans.coffee.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -29,6 +30,18 @@ public class Inventory {
         this.imageUrl = imageUrl;
         this.amount = amount;
     }
+
+    private ArrayList<Product> products = new ArrayList<>();
+
+    public void addProduct(Product product) {
+        products.add(product);
+    }
+
+    public ArrayList<Product> getProducts() {
+        return products;
+    }
+
+
 
     public long getId() {
         return id;
