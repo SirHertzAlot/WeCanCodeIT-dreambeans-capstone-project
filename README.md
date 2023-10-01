@@ -33,3 +33,6 @@ Coffee Shop
 
  ## Back end languages and technologies
  Java
+
+Diagram: 
+https://files.slack.com/files-pri/T14LST83D-F05T8JYEQUB/dream_beans_user_flow_chart.drawio.png
