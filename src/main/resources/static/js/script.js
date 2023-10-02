@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
       hamburger.classList.remove("active");
       navMenu.classList.remove("active");
     })
-    );
+  );
 
   //menu html
 
@@ -88,7 +88,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const itemQty = document.createElement("div");
     itemQty.classList.add("item-qty");
     itemQty.innerHTML = `<button class="decrement">-</button><span class ="quantity" data-itemId=${item.id}> 1 </span><button class="increment">+</button>`;
-
     itemContent.appendChild(itemBg);
     itemContent.appendChild(itemDesc);
     itemDesc.appendChild(itemQty);
@@ -127,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   displayMenu();
-  
+
   //add item to cart when clicked
   document.querySelectorAll(".add-button").forEach(function (button) {
     button.addEventListener("click", function () {
@@ -153,7 +152,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-
   //function to add item into the cart
   function addToCart(item) {
     cart.push(item);
@@ -161,25 +159,38 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   //update cart function
+  
   function updateCart() {
     cartList.innerHTML = "";
+    let total = 0;
+    const cartTotal = document.querySelector(".cart-total");
+    const groupedItems = {};
 
-    cart.forEach(function (item) {
+      cart.forEach(function (item) {
+      const itemName = item.name;
+      const itemPrice = item.price;
+  
+      if (groupedItems[itemName]) {
+        groupedItems[itemName].qty += item.qty;
+        groupedItems[itemName].totalPrice += item.qty * itemPrice;
+      } else {
+        groupedItems[itemName] = {
+          itemPrice: itemPrice,
+          qty: item.qty,
+          totalPrice: item.qty * itemPrice,
+        };
+      }
+    }); 
+    for (const itemName in groupedItems) {
+      const itemInfo = groupedItems[itemName];
       const cartItem = document.createElement("li");
-      cartItem.textContent = `${item.name} - $${item.price} - ${item.qty}`;
-
+      cartItem.textContent = `${itemName} - $${itemInfo.itemPrice} - ${itemInfo.qty} - $${itemInfo.totalPrice}`;
+  
       cartList.appendChild(cartItem);
-    });
+      total += itemInfo.totalPrice;
+    }
+    cartTotal.textContent = `Total: $${total.toFixed(2)}`;
   }
-  // const itemQty = button.parentElement.querySelector(".quantity");
-  // const itemId = itemQty.getAttribute("data-itemId");
-  // const itemIdQty = sample_db.find((item) => item.id === parseInt(itemId));
-  // if (itemIdQty) {
-
-  //   item.qty --;
-  // console.log(sample_db);
-  // }
-
   //increment button for every an item
   document.querySelectorAll(".increment").forEach(function (button) {
     button.addEventListener("click", function () {
@@ -203,5 +214,4 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
-  
 });
