@@ -20,8 +20,14 @@ import com.dreambeans.coffee.service.ProductService;
 @RestController
 @RequestMapping("/products")
 public class ProductsController {
-    @Autowired
-    ProductService productService;
+    
+    private ProductService productService;
+
+     
+
+    public ProductsController(ProductService productService) {
+        this.productService = productService;
+    }
 
     @GetMapping("/allproducts")
     public Iterable<Product> getAllProducts() {
