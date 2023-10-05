@@ -36,6 +36,8 @@ const sample_db = [
     image: "../img/dream bean.png",
   },
 ];
+
+
 //nav hamburger menu
 document.addEventListener("DOMContentLoaded", function () {
   console.log(sample_db);
