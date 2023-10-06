@@ -36,65 +36,8 @@ const sample_db = [
     image: "../img/dream bean.png",
   },
 ];
-const inventoryData = [
-  {
-    id: 1,
-    name: "Item 1",
-    price: 10.35,
-    qty: 0,
-    image: "../img/dream bean.png",
-  },
-  {
-    id: 2,
-    name: "Item 2",
-    price: 10.99,
-    qty: 2,
-    image: "../img/dream bean.png",
-  },
-  {
-    id: 3,
-    name: "Item 3",
-    price: 20.35,
-    qty: 3,
-    image: "../img/dream bean.png",
-  },
-  {
-    id: 3,
-    name: "Item 3",
-    price: 20.35,
-    qty: 1,
-    image: "../img/dream bean.png",
-  },
-  {
-    id: 3,
-    name: "Item 3",
-    price: 20.35,
-    qty: 0,
-    image: "../img/dream bean.png",
-  },
-  {
-    id: 3,
-    name: "Item 3",
-    price: 20.35,
-    qty: 3,
-    image: "../img/dream bean.png",
-  },
-  {
-    id: 3,
-    name: "Item 3",
-    price: 20.35,
-    qty: 1,
-    image: "../img/dream bean.png",
-  },
-  {
-    id: 3,
-    name: "Item 3",
-    price: 20.35,
-    qty: 0,
-    image: "../img/dream bean.png",
-  },
-  // Add more items as needed
-];
+
+
 //nav hamburger menu
 document.addEventListener("DOMContentLoaded", function () {
   console.log(sample_db);
@@ -111,24 +54,8 @@ document.addEventListener("DOMContentLoaded", function () {
       navMenu.classList.remove("active");
     })
   );
-
-  const inventoryName = document.getElementsByClassName("inventory-name")[0];
-  const inventoryPrice = document.getElementsByClassName("inventory-price")[0];
-  const inventoryQTY = document.getElementsByClassName("inventory-qty")[0];
-  inventoryData.forEach((item) => {
-    const listItemName = document.createElement("li");
-    listItemName.classList.add("inventory-item-name");
-    const listItemPrice = document.createElement("li");
-    listItemPrice.classList.add("inventory-item-price");
-    const listItemQty = document.createElement("li");
-    listItemQty.classList.add("inventory-item-qty");
-    listItemName.innerHTML = `<span>${item.name}</span>`;
-    listItemPrice.innerHTML = `<span>${item.price}</span>`;
-    listItemQty.innerHTML = `<span>${item.qty}</span>`;
-    inventoryName.appendChild(listItemName);
-    inventoryPrice.appendChild(listItemPrice);
-    inventoryQTY.appendChild(listItemQty);
-  });
+  
+  const itemList = document.getElementsByClassName("item-list")[0];
 
   //menu html
 
@@ -173,7 +100,6 @@ document.addEventListener("DOMContentLoaded", function () {
     return menuItem;
   }
 
-  const itemList = document.getElementsByClassName("item-list")[0];
 
   //display menu
   function displayMenu() {
@@ -291,4 +217,5 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
 });
