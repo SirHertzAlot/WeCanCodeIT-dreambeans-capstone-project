@@ -212,6 +212,18 @@ body {
 .sign-in:hover {
   background-color: #45a049;
 }
+section{
+  padding: 100px 200px;
+
+}
+.index-page{
+position: relative;
+width: 100%;
+min-height: 100vh;
+display: flex;
+justify-content: center;
+}
+
 
 .main-content {
   width: 100%;
@@ -227,8 +239,8 @@ body {
 }
 
 .mid-section {
-  height: 350px;
-  width: 350px;
+  height: 400px;
+  width: 400px;
   background-color: #9c7752;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -240,7 +252,7 @@ body {
   text-align: center;
 }
 .side-section {
-  width: 35%;
+  width: 30%;
 }
 
 .category {
