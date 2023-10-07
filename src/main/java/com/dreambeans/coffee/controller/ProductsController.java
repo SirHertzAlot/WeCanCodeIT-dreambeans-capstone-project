@@ -11,12 +11,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
-
+@RequestMapping("/api/products")
 public class ProductsController {
 
     private ProductService productService;
     private MenuService menuService;
 
+    
     public ProductsController(ProductService productService) {
         this.productService = productService;
     }
