@@ -16,9 +16,9 @@ public class Menu {
 
     protected String name;
 
-    protected String size;
+  
 
-    protected float price;
+  
 
     protected String description;
 
@@ -27,26 +27,20 @@ public class Menu {
     @OneToMany(mappedBy = "menu", orphanRemoval = true)
     private Collection<Product> products;
 
-//    protected ArrayList<Product> products = new ArrayList<>();
+
 
     public Menu() {
     }
 
-    public Menu(String name, String size, float price, String description, String image) {
+    public Menu(String name, String description, String image) {
         this.name = name;
-        this.price = price;
+        
         this.description = description;
         this.image = image;
-        this.size = size;
+        
     }
 
-    /*public void addProduct(Product product) {
-        products.add(product);
-    }
-
-    public ArrayList<Product> getProducts() {
-        return products;
-    }*/
+   
     
     public long getId() {
         return id;
@@ -64,21 +58,7 @@ public class Menu {
         this.name = name;
     }
 
-    public String getSize() {
-        return size;
-    }
 
-    public void setSize(String size) {
-        this.size = size;
-    }
-
-    public float getPrice() {
-        return price;
-    }
-
-    public void setPrice(float price) {
-        this.price = price;
-    }
 
     public String getDescription() {
         return description;
