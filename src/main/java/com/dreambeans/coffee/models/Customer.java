@@ -2,6 +2,8 @@ package com.dreambeans.coffee.models;
 
 import jakarta.persistence.*;
 
+import java.util.Collection;
+
 @Entity
 public class Customer {
 
@@ -12,7 +14,8 @@ public class Customer {
     private String userName;
 
     private String password;
-
+    @OneToMany(mappedBy = "customer")
+    private Collection<Cart> carts;
     public Customer() {
     }
 
@@ -20,6 +23,8 @@ public class Customer {
         this.userName = userName;
         this.password = password;
     }
+
+    public Collection<Cart> getCarts() { return carts; }
 
     public String getUserName() {
         return userName;

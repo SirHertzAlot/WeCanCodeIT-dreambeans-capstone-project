@@ -7,25 +7,54 @@ public class Cart {
     @Id
     @GeneratedValue
     private long cartId;
-    //private long customerId;
     private String itemsInCart;
-
-    private int quantityInCart;
 
     private float subTotalForCart;
 
+    private int quantityInCart;
+
     private String timeCartWasCreated;
+
+    private int itemQuantity;
+    private String orderedTime;
+    private String orderedDate;
+    @ManyToOne
+    private Customer customer;
+
 
     public Cart() {
     }
 
     public Cart (String itemsInCart, int quantityInCart, float subTotalForCart,
-            String timeCartWasCreated) {
-        //this.customerId = customerId;
+                 String orderedTime, String orderedDate,
+                 String timeCartWasCreated, Customer customer) {
         this.itemsInCart = itemsInCart;
         this.quantityInCart = quantityInCart;
         this.subTotalForCart = subTotalForCart;
         this.timeCartWasCreated = timeCartWasCreated;
+        this.customer = customer;
+        this.orderedTime = orderedTime;
+        this.orderedDate = orderedDate;
+    }
+
+    public String getOrderedTime() {
+        return orderedTime;
+    }
+
+    public void setOrderedTime(String orderedTime) {
+        this.orderedTime = orderedTime;
+    }
+
+    public String getOrderedDate() {
+        return orderedDate;
+    }
+
+    public void setOrderedDate(String orderedDate) {
+        this.orderedDate = orderedDate;
+    }
+
+    public Customer getCustomer() {
+        return customer;
     }
 
     public long getCartId() {
@@ -35,14 +64,6 @@ public class Cart {
     public void setCartId(long cartId) {
         this.cartId = cartId;
     }
-
-    // public long getCustomerId() {
-    //     return customerId;
-    // }
-
-    // public void setCustomerId(long customerId) {
-    //     this.customerId = customerId;
-    // }
 
     public String getItemsInCart() {
         return itemsInCart;
@@ -76,10 +97,7 @@ public class Cart {
         this.timeCartWasCreated = timeCartWasCreated;
     }
 
-    public boolean cartIsPaid(Cart cart){
-        if(cart != null){
-            return true;
-        }
-        return false;
+    public boolean cartPaid(){
+        return true;
     }
 }
