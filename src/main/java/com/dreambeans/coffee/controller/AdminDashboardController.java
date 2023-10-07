@@ -1,9 +1,12 @@
 package com.dreambeans.coffee.controller;
 
-import com.dreambeans.coffee.models.Inventory;
-import com.dreambeans.coffee.models.Menu;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.dreambeans.coffee.models.Product;
-import com.dreambeans.coffee.service.InventoryService;
+import com.dreambeans.coffee.models.Menu;
+import com.dreambeans.coffee.service.ProductService;
 import com.dreambeans.coffee.service.MenuService;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,14 +17,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/admin")
 public class AdminDashboardController {
     @Resource
-    private InventoryService inventoryService;
+    private ProductService productService;
 
     @Resource
     private MenuService menuService;
 
     @GetMapping("/admin/inventory")
-    public Iterable<Inventory> listEntireInventory() {
-        return inventoryService.listEntireInventory();
+    public Iterable<Product> listAllProducts() {
+        return productService.listAllProducts();
     }
 
     @GetMapping("/admin/menu")
