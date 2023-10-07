@@ -33,7 +33,7 @@ public class ProductsController {
         Optional<Product> productOp = productService.findProductsById(id);
         if (productOp.isPresent()) {
             Product product = productOp.get();
-            productDto = new ProductDto(product.getId(), product.getPrice(), product.getDescription(),product.getName(), product.getImage(), product.getMenu().getId());
+            productDto = new ProductDto(product.getId(), product.getPrice(), product.getDescription(),product.getName(), product.getImage(),product.getQuantity(), product.getMenu().getId());
             return ResponseEntity.ok(productDto);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -55,7 +55,7 @@ public class ProductsController {
     @PostMapping("/save")
     public ResponseEntity<Product> createProduct(@RequestBody ProductDto productDto) {
         Menu menu = menuService.findMenuById(productDto.getMenuId()).get();
-        Product product = new Product(productDto.getPrice(), productDto.getDescription(), productDto.getName(), productDto.getImage(), menu);
+        Product product = new Product(productDto.getPrice(), productDto.getDescription(), productDto.getName(), productDto.getImage(), productDto.getQuantity(), menu);
         product.setId(productDto.getId());
         Product savedProduct = productService.saveProduct(product);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedProduct);
