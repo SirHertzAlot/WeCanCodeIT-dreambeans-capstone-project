@@ -19,6 +19,9 @@ public class Product {
         this.image = image;
     }
 
+    @ManyToOne
+    private Menu menu;
+
     public Product() {
     }
     

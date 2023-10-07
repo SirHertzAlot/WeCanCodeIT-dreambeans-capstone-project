@@ -1,7 +1,11 @@
 package com.dreambeans.coffee.models;
 
 import jakarta.persistence.*;
-import java.util.ArrayList;
+
+import java.util.Collection;
+
+
+
 
 @Entity
 public class Menu {
@@ -20,8 +24,8 @@ public class Menu {
 
     protected String image;
 
-    // @OneToMany
-    // private List<Product> products;
+    @OneToMany(mappedBy = "menu", orphanRemoval = true)
+    private Collection<Product> products;
 
 //    protected ArrayList<Product> products = new ArrayList<>();
 
