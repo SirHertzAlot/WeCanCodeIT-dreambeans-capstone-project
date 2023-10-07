@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.dreambeans.coffee.models.Product;
 
 @Repository
-public interface ProductRepository extends CrudRepository<Product, Long> {
+public interface ProductsRepository extends CrudRepository<Product, Long> {
 
 }

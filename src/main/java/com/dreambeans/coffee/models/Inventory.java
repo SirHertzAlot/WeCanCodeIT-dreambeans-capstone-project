@@ -1,26 +1,19 @@
 package com.dreambeans.coffee.models;
 
+import jakarta.persistence.*;
 import java.util.ArrayList;
-import java.util.List;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 @Entity
-
 public class Inventory {
-
     @Id
     @GeneratedValue
-    private long id;
+    protected long id;
 
-    private String name;
+    protected String name;
 
-    private String imageUrl;
+    protected String imageUrl;
 
-    private int amount;
+    protected int amount;
 
     public Inventory() {
     }
@@ -31,7 +24,7 @@ public class Inventory {
         this.amount = amount;
     }
 
-    private ArrayList<Product> products = new ArrayList<>();
+    /*private ArrayList<Product> products = new ArrayList<>();
 
     public void addProduct(Product product) {
         products.add(product);
@@ -39,9 +32,7 @@ public class Inventory {
 
     public ArrayList<Product> getProducts() {
         return products;
-    }
-
-
+    }*/
 
     public long getId() {
         return id;
@@ -74,7 +65,5 @@ public class Inventory {
     public void setAmount(int amount) {
         this.amount = amount;
     }
-
-   
 
 }

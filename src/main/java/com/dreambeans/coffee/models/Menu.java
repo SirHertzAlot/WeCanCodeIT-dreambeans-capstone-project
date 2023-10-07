@@ -1,41 +1,34 @@
 package com.dreambeans.coffee.models;
 
+import jakarta.persistence.*;
 import java.util.ArrayList;
-import java.util.List;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Menu {
 
     @Id
     @GeneratedValue
-    private long id;
+    protected long id;
 
-    private String name;
+    protected String name;
 
-    private String size;
+    protected String size;
 
-    private float price;
+    protected float price;
 
-    private String description;
+    protected String description;
 
-    private String image;
+    protected String image;
 
     // @OneToMany
     // private List<Product> products;
 
-    private ArrayList<Product> products = new ArrayList<>();
+//    protected ArrayList<Product> products = new ArrayList<>();
 
     public Menu() {
     }
 
     public Menu(String name, String size, float price, String description, String image) {
-
-        
         this.name = name;
         this.price = price;
         this.description = description;
@@ -43,13 +36,13 @@ public class Menu {
         this.size = size;
     }
 
-    public void addProduct(Product product) {
+    /*public void addProduct(Product product) {
         products.add(product);
     }
 
     public ArrayList<Product> getProducts() {
         return products;
-    }
+    }*/
     
     public long getId() {
         return id;

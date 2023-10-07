@@ -1,17 +1,14 @@
 package com.dreambeans.coffee.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Orders {
 
     @Id
     @GeneratedValue
-
-    private long ordersId;
-    private long customerId;
+    private Long ordersId;
+    private Long customerId;
     private String customerName;
     private String itemsOrdered;
     private int itemQuantity;
@@ -22,7 +19,7 @@ public class Orders {
     public Orders() {
     }
 
-    public Orders(long customerId, String customerName, String itemsOrdered, int itemQuantity, float cost,
+    public Orders(Long customerId, String customerName, String itemsOrdered, int itemQuantity, float cost,
             String orderedTime, String orderedDate) {
         this.customerId = customerId;
         this.customerName = customerName;
@@ -37,7 +34,7 @@ public class Orders {
         return ordersId;
     }
 
-    public void setOrdersId(long ordersId) {
+    public void setOrdersId(Long ordersId) {
         this.ordersId = ordersId;
     }
 

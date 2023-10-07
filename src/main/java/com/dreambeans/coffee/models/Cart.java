@@ -1,8 +1,6 @@
 package com.dreambeans.coffee.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Cart {
