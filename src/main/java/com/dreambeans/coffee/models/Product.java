@@ -26,6 +26,7 @@ public class Product {
     public Product() {
     }
     
+    
     public Long getId() {
         return id;
     }
@@ -55,6 +56,11 @@ public class Product {
     }
     public void setImage(String image) {
         this.image = image;
+    }
+
+
+    public Menu getMenu() {
+        return menu;
     }
 }
 

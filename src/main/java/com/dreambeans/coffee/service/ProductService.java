@@ -14,7 +14,7 @@ public class ProductService {
     @Resource
     private ProductsRepository productRepo;
 
-    public Iterable<Product> listAllProducts() {
+    public Iterable<Product> listAllProducts(Long menuId) {
         return productRepo.findAll();
     }
 
@@ -22,9 +22,12 @@ public class ProductService {
         return productRepo.findById(id);
     }
 
-    public void saveProduct(Product savedProduct) {
-        productRepo.save(savedProduct);
+    public Product saveProduct(Product savedProduct) {
+        return productRepo.save(savedProduct);
     }
 
+    public void deleteProductById(Long id) {
+        productRepo.deleteById(id);
+    }
 
 }
