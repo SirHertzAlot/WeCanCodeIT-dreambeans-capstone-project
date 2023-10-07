@@ -19,7 +19,7 @@ public class MenuService{
     private MenuRepository menuRepo;
 	
      public Menu saveMenu(Menu menu) { return menuRepo.save(menu); }
-    public Optional<Menu> findProductById(Long id) {
+    public Optional<Menu> findMenuById(Long id) {
         return menuRepo.findById(id);
     }
 
