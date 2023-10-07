@@ -5,14 +5,22 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #f8dfb8;
+}
+
 header img {
-  width: 200px;
+  width: 250px;
   overflow: hidden;
+  margin: 1px;
 }
 
 header {
+  height: 120px;
   display: flex;
   background-color: #ffffff;
+  padding: 5px;
+  align-items: center;
 }
 
 li {
@@ -29,7 +37,7 @@ a {
 }
 
 .navbar {
-  min-height: 70px;
+  min-height: 80px;
   justify-content: space-between;
   display: flex;
   align-items: center;
@@ -43,6 +51,7 @@ a {
   align-items: center;
   gap: 30px;
   padding: 30px;
+  font-size: 30px;
 }
 
 .link {
@@ -85,11 +94,10 @@ a {
   .hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
-
   .nav-menu {
     position: fixed;
     left: -100%;
-    top: 70px;
+    top: 0px;
     gap: 0;
     flex-direction: column;
     background-color: #ffffff;
@@ -133,12 +141,51 @@ a {
   top: -5px;
   left: 60%;
   padding: 5px 10px;
-  font-size: small;
 }
 
-body {
-  background-color: #f8dfb8;
+.index-page {
+  z-index: -2;
+  flex-direction: column;
+  background: rgba(185, 144, 103, 0.2);
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
 }
+.index-page:before {
+  content: "";
+  position: absolute;
+  background: rgba(185, 144, 103, 0.3);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.index-page video {
+  z-index: -3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  align-items: center;
+  display: flex;
+  color: rgb(255, 255, 255, 0.9);
+  font-family: 'Cinzel', serif;
+  font-size: 25px;
+  flex-direction: column;
+  padding: 80px 30px;
+  text-align: center;
+}
+.content img {
+  width: 250px;
+}
+
 .username {
   margin: auto;
   text-align: center;
@@ -211,16 +258,6 @@ body {
 .sign-up:hover,
 .sign-in:hover {
   background-color: #45a049;
-}
-section {
-  padding: 100px 200px;
-}
-.index-page {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
 }
 
 .main-content {
@@ -444,10 +481,10 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   text-align: center;
   font-size: 30px;
   padding: 70px 80px;
+  color: #ffffff;
 }
 
 .about-us h1,
@@ -455,25 +492,28 @@ h2 {
   margin: 30px;
   padding: 20px;
 }
-.about-us img {
-  width: 600px;
-}
+
 .title {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 20px;
   color: #562b18;
 }
-/* Styling for inventory list */
-.inventory-list{
+
+.inventory-list {
   display: flex;
   justify-content: center;
   padding: 10px 30px;
+  font-size: 18px;
 }
 .inventory-list ul {
   font-style: italic;
 }
-.inventory-id, .inventory-name, .inventory-qty, .inventory-price, .inventory-action {
+.inventory-id,
+.inventory-name,
+.inventory-qty,
+.inventory-price,
+.inventory-action {
   width: 140px;
   list-style: none;
   max-width: 600px;
@@ -481,30 +521,42 @@ h2 {
   background-color: #fff;
   border: 1px solid #ddd;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  font-size: 20px;
 }
 
-.inventory-id, .inventory-name, .inventory-qty, .inventory-price, .inventory-action, li {
+.inventory-id,
+.inventory-name,
+.inventory-qty,
+.inventory-price,
+.inventory-action,
+li {
   font-style: normal;
   flex-direction: column;
-  padding: 5px 5px;
+  padding: 3px 3px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.inventory-id, .inventory-name, .inventory-qty, .inventory-price, .inventory-action,
+.inventory-id,
+.inventory-name,
+.inventory-qty,
+.inventory-price,
+.inventory-action,
 li:last-child {
   border-bottom: none;
 }
 .inventory-action button {
+  font-size: 18px;
   margin: 1px 1px;
-  width: 45px;
+  width: 55px;
 }
 .inventory-action li {
   flex-direction: row;
 }
 
 form {
+  font-size: 18px;
   background-color: #8c5121;
   opacity: 0.9;
   padding: 10px 30px;
@@ -512,17 +564,17 @@ form {
   display: flex;
   flex-direction: column;
 }
-form div{
+form div {
   align-items: center;
   display: flex;
   padding: 10px;
   border-radius: 20px;
 }
-form input{
+form input {
   width: 100px;
   height: 20px;
 }
-form label{
+form label {
   color: #ddd;
   text-align: center;
   font-weight: 500;
@@ -530,6 +582,7 @@ form label{
   width: 100px;
   height: 20px;
 }
-form button{
+form button {
+  font-size: 18px;
   margin: 30px;
 }
