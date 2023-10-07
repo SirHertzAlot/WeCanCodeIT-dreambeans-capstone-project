@@ -1,28 +1,22 @@
-// package com.dreambeans.coffee.controller;
+ package com.dreambeans.coffee.controller;
 
-// import java.util.List;
+ import com.dreambeans.coffee.models.Menu;
+ import com.dreambeans.coffee.service.MenuService;
+ import org.springframework.web.bind.annotation.GetMapping;
+ import org.springframework.web.bind.annotation.RequestMapping;
+ import org.springframework.web.bind.annotation.RestController;
 
-// import org.springframework.beans.factory.annotation.Autowired;
-// import org.springframework.web.bind.annotation.GetMapping;
-// import org.springframework.web.bind.annotation.RequestMapping;
-// import org.springframework.web.bind.annotation.RestController;
+ @RestController
+ @RequestMapping("/api")
+ public class MenuController {
 
-// import com.dreambeans.coffee.models.Menu;
-// import com.dreambeans.coffee.models.Product;
-// import com.dreambeans.coffee.service.MenuService;
+     private MenuService menuService;
 
-// @RestController
-// @RequestMapping
-// public class MenuController {
-//     @Autowired
-//     MenuService menuService;
+     public MenuController(MenuService menuService){ this.menuService = menuService; }
 
-//     @Autowired
-//     Menu menu;
-
-//     @GetMapping("/getProducts")
-//     public List<Product> getMenu() {
-//         return menu.getProducts();
-//     }
+     @GetMapping("/getProducts")
+     public Iterable<Menu> getMenu() {
+         return menuService.listAllMenu();
+     }
     
-// }
+ }

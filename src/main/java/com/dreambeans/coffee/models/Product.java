@@ -1,35 +1,28 @@
 package com.dreambeans.coffee.models;
-import javax.persistence.Entity;
 
-import javax.persistence.Id;
-
-import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.*;
 
 @Entity
 public class Product { 
     @Id
     @GeneratedValue
-    private long id;
-
+    private Long id;
     private double price;
     private String description;
     private String name;
     private String image;
     
     public Product(double price, String description, String name, String image) {
-        
         this.price = price;
         this.description = description;
         this.name = name;
         this.image = image;
     }
 
-
     public Product() {
     }
-
     
-    public long getId() {
+    public Long getId() {
         return id;
     }
     public void setId(long id) {

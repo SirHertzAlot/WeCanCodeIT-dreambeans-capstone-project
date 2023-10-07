@@ -1,15 +1,14 @@
 package com.dreambeans.coffee.service;
 
-import java.util.Optional;
-
+import com.dreambeans.coffee.models.Product;
+import com.dreambeans.coffee.repositories.ProductsRepository;
 import org.springframework.stereotype.Service;
 
-import com.dreambeans.coffee.models.Product;
-import com.dreambeans.coffee.repositories.ProductRepository;
+import java.util.Optional;
 
 @Service
 public class ProductService {
-    private ProductRepository productRepo;
+    private ProductsRepository productRepo;
 
     public Iterable<Product> listAllProducts() {
         return productRepo.findAll();

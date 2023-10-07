@@ -1,18 +1,14 @@
 package com.dreambeans.coffee.service;
 
-import java.util.List;
-import java.util.Optional;
-
+import com.dreambeans.coffee.models.Inventory;
+import com.dreambeans.coffee.repositories.InventoryRepository;
 import org.springframework.stereotype.Service;
 
-import com.dreambeans.coffee.models.Inventory;
-import com.dreambeans.coffee.models.Menu;
-import com.dreambeans.coffee.models.Product;
-import com.dreambeans.coffee.repositories.InventoryRepository;
+import java.util.Optional;
 
 @Service
 public class InventoryService{
-    private InventoryRepository inventoryRepo; 
+    private InventoryRepository inventoryRepo;
     
     // public void addItemToInventory(Product product) {
     //     inventoryRepo.save(product);
