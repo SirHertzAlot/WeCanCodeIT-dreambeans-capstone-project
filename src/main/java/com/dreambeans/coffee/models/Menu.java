@@ -24,7 +24,7 @@ public class Menu {
 
     protected String image;
 
-    @OneToMany(mappedBy = "menu")
+    @OneToMany(mappedBy = "menu", orphanRemoval = true)
     private Collection<Product> products;
 
 //    protected ArrayList<Product> products = new ArrayList<>();
