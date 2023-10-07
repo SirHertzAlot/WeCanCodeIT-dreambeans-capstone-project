@@ -54,6 +54,8 @@ document.addEventListener("DOMContentLoaded", function () {
       navMenu.classList.remove("active");
     })
   );
+  
+  const itemList = document.getElementsByClassName("item-list")[0];
 
   //menu html
 
@@ -98,7 +100,6 @@ document.addEventListener("DOMContentLoaded", function () {
     return menuItem;
   }
 
-  const itemList = document.getElementsByClassName("item-list")[0];
 
   //display menu
   function displayMenu() {
@@ -161,17 +162,17 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   //update cart function
-  
+
   function updateCart() {
     cartList.innerHTML = "";
     let total = 0;
     const cartTotal = document.querySelector(".cart-total");
     const groupedItems = {};
 
-      cart.forEach(function (item) {
+    cart.forEach(function (item) {
       const itemName = item.name;
       const itemPrice = item.price;
-  
+
       if (groupedItems[itemName]) {
         groupedItems[itemName].qty += item.qty;
         groupedItems[itemName].totalPrice += item.qty * itemPrice;
@@ -182,12 +183,12 @@ document.addEventListener("DOMContentLoaded", function () {
           totalPrice: item.qty * itemPrice,
         };
       }
-    }); 
+    });
     for (const itemName in groupedItems) {
       const itemInfo = groupedItems[itemName];
       const cartItem = document.createElement("li");
       cartItem.textContent = `${itemName} - $${itemInfo.itemPrice} - ${itemInfo.qty} - $${itemInfo.totalPrice}`;
-  
+
       cartList.appendChild(cartItem);
       total += itemInfo.totalPrice;
     }
@@ -216,4 +217,5 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
 });
