@@ -36,11 +36,11 @@ public class ProductsController {
         }
     }
 
-    @GetMapping("/product")
-    public Product getOneProduct() { 
-        Product latte = new Product(3.99, "latte", "hot coffee", "https://www.allrecipes.com/thmb/Dq9kocJWJNmhfPotGiZT6Tl_r1w=/750x0/filters:no_upscale([…]):format(webp)/9428203-9d140a4ed1424824a7ddd358e6161473.jpg");
-        return latte;
-    }
+    // @GetMapping("/product")
+    // public Product getOneProduct() { 
+    //     Product latte = new Product(3.99, "latte", "hot coffee", "https://www.allrecipes.com/thmb/Dq9kocJWJNmhfPotGiZT6Tl_r1w=/750x0/filters:no_upscale([…]):format(webp)/9428203-9d140a4ed1424824a7ddd358e6161473.jpg");
+    //     return latte;
+    // }
 
 
 

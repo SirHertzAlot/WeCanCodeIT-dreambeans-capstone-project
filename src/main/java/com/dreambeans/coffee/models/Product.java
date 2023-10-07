@@ -12,11 +12,12 @@ public class Product {
     private String name;
     private String image;
     
-    public Product(double price, String description, String name, String image) {
+    public Product(double price, String description, String name, String image, Menu menu) {
         this.price = price;
         this.description = description;
         this.name = name;
         this.image = image;
+        this.menu = menu;
     }
 
     @ManyToOne
