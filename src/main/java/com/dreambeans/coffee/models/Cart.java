@@ -76,4 +76,10 @@ public class Cart {
         this.timeCartWasCreated = timeCartWasCreated;
     }
 
+    public boolean cartIsPaid(Cart cart){
+        if(cart != null){
+            return true;
+        }
+        return false;
+    }
 }
