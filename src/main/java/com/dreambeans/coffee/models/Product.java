@@ -11,12 +11,15 @@ public class Product {
     private String description;
     private String name;
     private String image;
+    private int quantity;
     
-    public Product(double price, String description, String name, String image) {
+    public Product(double price, String description, String name, String image, int quantity, Menu menu) {
         this.price = price;
         this.description = description;
         this.name = name;
         this.image = image;
+        this.menu = menu;
+        this.quantity = quantity;
     }
 
     @ManyToOne
@@ -25,6 +28,17 @@ public class Product {
     public Product() {
     }
     
+    
+    public int getQuantity() {
+        return quantity;
+    }
+
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+
     public Long getId() {
         return id;
     }
@@ -54,6 +68,11 @@ public class Product {
     }
     public void setImage(String image) {
         this.image = image;
+    }
+
+
+    public Menu getMenu() {
+        return menu;
     }
 }
 

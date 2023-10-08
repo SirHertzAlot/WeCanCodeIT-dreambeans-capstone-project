@@ -1,5 +1,7 @@
 package com.dreambeans.coffee.models;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -25,17 +27,10 @@ public class Cart {
     public Cart() {
     }
 
-    public Cart (String itemsInCart, int quantityInCart, float subTotalForCart,
-                 String orderedTime, String orderedDate,
-                 String timeCartWasCreated, Customer customer) {
-        this.itemsInCart = itemsInCart;
-        this.quantityInCart = quantityInCart;
-        this.subTotalForCart = subTotalForCart;
-        this.timeCartWasCreated = timeCartWasCreated;
+    public Cart(Customer customer) {
         this.customer = customer;
-        this.orderedTime = orderedTime;
-        this.orderedDate = orderedDate;
-    }
+        this.timeCartWasCreated = LocalDate.now().toString();
+     }
 
     public String getOrderedTime() {
         return orderedTime;
@@ -93,11 +88,9 @@ public class Cart {
         return timeCartWasCreated;
     }
 
-    public void setTimeCartWasCreated(String timeCartWasCreated) {
-        this.timeCartWasCreated = timeCartWasCreated;
-    }
 
-    public boolean cartPaid(){
+
+    public boolean cartPaid() {
         return true;
     }
 }

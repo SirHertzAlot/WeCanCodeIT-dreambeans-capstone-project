@@ -16,19 +16,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/admin")
 public class AdminDashboardController {
-    @Resource
-    private ProductService productService;
+    // @Resource
+    // private ProductService productService;
 
-    @Resource
-    private MenuService menuService;
+    // @Resource
+    // private MenuService menuService;
 
-    @GetMapping("/admin/inventory")
-    public Iterable<Product> listAllProducts() {
-        return productService.listAllProducts();
-    }
+    // @GetMapping("/admin/inventory")
+    // public Iterable<Product> listAllProducts() {
+    //     return productService.listAllProducts();
+    // }
 
-    @GetMapping("/admin/menu")
-    public Iterable<Menu> listAllMenu() {
-        return menuService.listAllMenu();
-    }
+    // @GetMapping("/admin/menu")
+    // public Iterable<Menu> listAllMenu() {
+    //     return menuService.listAllMenu();
+    // }
 }
