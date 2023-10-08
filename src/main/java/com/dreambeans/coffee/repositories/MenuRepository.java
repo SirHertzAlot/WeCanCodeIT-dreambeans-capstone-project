@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface MenuRepository extends CrudRepository<Menu, Long> { }
+public interface MenuRepository extends CrudRepository<Menu, Long> {
+    Menu findByName(String name);
+ }
