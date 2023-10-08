@@ -1,12 +1,12 @@
 * {
-  box-sizing: border-box;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
 body {
-  background-color: #f8dfb8;
+  background-image: url(../img/flower-bg.png);
+  background-repeat: repeat;
 }
 
 header img {
@@ -31,6 +31,9 @@ a {
   color: black;
   text-decoration: none;
 }
+a :hover{
+  cursor: pointer;
+}
 
 .logo {
   flex: 1;
@@ -43,7 +46,9 @@ a {
   align-items: center;
   padding: 0 24px;
 }
-
+.navbar h1{
+  font-family: 'Roboto Slab', serif;
+}
 .nav-menu {
   list-style: none;
   display: flex;
@@ -75,44 +80,6 @@ a {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   background-color: black;
-}
-
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-    padding: 10px;
-  }
-
-  .hamburger.active .bar:nth-child(2) {
-    opacity: 0;
-  }
-
-  .hamburger.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-
-  .hamburger.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-  .nav-menu {
-    position: fixed;
-    left: -100%;
-    top: 0px;
-    gap: 0;
-    flex-direction: column;
-    background-color: #ffffff;
-    width: 100%;
-    text-align: center;
-    transition: 0.3s;
-  }
-
-  .nav-item {
-    margin: 16px 0;
-  }
-
-  .nav-menu.active {
-    left: 0;
-  }
 }
 
 .nav-menu .link {
@@ -151,6 +118,7 @@ a {
   width: 100%;
   min-height: 100vh;
   display: flex;
+  font-family: 'Roboto Slab', serif;
 }
 .index-page:before {
   content: "";
@@ -186,69 +154,34 @@ a {
   width: 250px;
 }
 
-.username {
+.username, .password, .name{
   margin: auto;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
   font-weight: 400;
+  padding: 5px 6px;
 }
 
-#username {
-  width: 75%;
+#username, #password, #name  {
+  width: 85%;
   height: 35px;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
   align-content: center;
   border-radius: 5px;
 }
 
-.password {
-  margin: auto;
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 400;
-}
-
-#password {
-  width: 75%;
-  height: 35px;
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  align-content: center;
-  border-radius: 5px;
-}
-.name {
-  margin: auto;
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 400;
-}
-
-#name {
-  width: 75%;
-  height: 35px;
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  align-content: center;
-  border-radius: 5px;
-}
 .sign-up,
 .sign-in {
-  width: 75%;
+  width: 70%;
   margin: auto;
   margin-top: 25px;
   padding: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  background-color: #4caf50;
-  color: #0000;
-  border: 20px;
+  background-color: #57cf5b;
   border-radius: 5px;
   cursor: pointer;
   font-size: 18px;
-  font-family: Arial, Helvetica, sans-serif;
   position: inherit;
   transition: background-color 0.3s ease;
   gap: 30px;
@@ -263,10 +196,8 @@ a {
 .main-content {
   width: 100%;
   height: 850px;
-  background-image: url("../img/bg.png");
   background-repeat: no-repeat;
   background-size: 100%;
-  background-color: #f8dfb8;
   padding: 50px 60px;
   align-content: center;
   display: flex;
@@ -274,17 +205,14 @@ a {
 }
 
 .mid-section {
-  height: 400px;
+  height: 420px;
   width: 400px;
-  background-color: #9c7752;
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
-  padding: 10px 30px;
-}
-.mid-section div {
-  text-align: center;
+  background-color: rgb(150, 108, 63);
+  border-radius: 20px;
+  font-family: 'Roboto Slab', serif;
+  font-size: larger;
+  padding: 30px;
+  color: #ffffff;
 }
 .side-section {
   width: 30%;
@@ -329,9 +257,6 @@ a {
   width: 100%;
   background-color: #f5ddc9;
   border-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
 }
 
 .menu-content .latte {
@@ -466,7 +391,7 @@ a {
   display: block;
   margin: 25px auto;
   padding: 10px 20px;
-  background-color: #ff5733;
+  background-color: rgb(225, 132, 3);
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -474,24 +399,9 @@ a {
 }
 
 .close-bttn:hover {
-  background-color: #ff0000;
+  background-color: #d74400;
 }
 
-.about-us {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 30px;
-  padding: 70px 80px;
-  color: #ffffff;
-}
-
-.about-us h1,
-h2 {
-  margin: 30px;
-  padding: 20px;
-}
 
 .title {
   text-align: center;
@@ -503,8 +413,8 @@ h2 {
 .inventory-list {
   display: flex;
   justify-content: center;
-  padding: 10px 30px;
   font-size: 18px;
+  border-radius: 20px;
 }
 .inventory-list ul {
   font-style: italic;
@@ -538,30 +448,25 @@ li {
   align-items: center;
 }
 
-.inventory-id,
-.inventory-name,
-.inventory-qty,
-.inventory-price,
-.inventory-action,
-li:last-child {
-  border-bottom: none;
-}
 .inventory-action button {
   font-size: 18px;
   margin: 1px 1px;
   width: 55px;
 }
+
 .inventory-action li {
   flex-direction: row;
 }
 
 form {
+  width: 350px;
   font-size: 18px;
-  background-color: #8c5121;
+  background-color: rgb(150, 108, 63, 0.9);
   opacity: 0.9;
   padding: 10px 30px;
   border-radius: 20px;
   display: flex;
+  align-items: center;
   flex-direction: column;
 }
 form div {
@@ -571,8 +476,9 @@ form div {
   border-radius: 20px;
 }
 form input {
-  width: 100px;
+  width: 120px;
   height: 20px;
+  border-radius: 5px;
 }
 form label {
   color: #ddd;
@@ -583,6 +489,125 @@ form label {
   height: 20px;
 }
 form button {
+  width: 100px;
   font-size: 18px;
   margin: 30px;
+  border-radius: 20px;
+}
+.about-us {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 30px;
+  padding: 70px 80px;
+  color: #ffffff;
+}
+
+.about-us h1,
+h2 {
+  font-family: 'Cinzel', serif;
+  margin: 30px;
+  padding: 20px;
+  text-align: center;
+}
+.contact-page{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
+  margin: 10px 10px;
+}
+.contact-page h1{
+  background-color: rgb(255, 255, 255, 0.7);
+  padding: 10px;
+  border-radius: 20px;
+}
+.contact-us{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.team-member{
+  background-color: rgb(255, 255, 255, 0.8);
+  width: 380px;
+  margin: 10px;
+  border-radius: 20px;
+  height: 200px;
+}
+.team-member h2{
+  font-family: 'Cinzel', serif;
+  margin: 30px;
+  padding: 20px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  text-align: center;
+}
+.team-member p{
+  font-family: 'Cinzel', serif;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.team-member i{
+  width: 100px;
+}
+.soc-med{
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 895px) {
+  .hamburger {
+    display: block;
+    padding: 10px;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 0px;
+    gap: 0;
+    flex-direction: column;
+    background-color: #ffffff;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .nav-item {
+    margin: 16px 0;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .mid-section {
+    width: 99%;
+    height: 450px;
+    background-color: rgb(150, 108, 63, 0.9);
+    border-radius: 20px;
+    font-family: 'Roboto Slab', serif;
+    font-size: larger;
+  }
+  .side-section{
+    width: 1%;
+  }
+  .contact-page{
+    height: 100%;
+  }
 }

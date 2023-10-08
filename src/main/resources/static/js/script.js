@@ -57,6 +57,15 @@ document.addEventListener("DOMContentLoaded", function () {
   
   const itemList = document.getElementsByClassName("item-list")[0];
 
+  // this is calling the api for a menu
+  let products;
+  fetch("http://localhost:8080/api/products/allproducts/1") 
+    .then(response => response.json())
+    .then(products => displayMenu(products)) 
+    .catch(error => console.log(error));
+    
+    
+
   //menu html
 
   function createItemElement(item) {
@@ -102,10 +111,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   //display menu
-  function displayMenu() {
-    console.log(sample_db);
-    sample_db.forEach(function (item) {
-      const qty = item.qty;
+  function displayMenu(products) {
+    console.log("inside the menu",products);
+    products.forEach(function (item) {
+      const qty = item.quantity;
       if (qty > 0) {
         const itemElement = createItemElement(item);
         itemList.appendChild(itemElement);
@@ -128,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
     cartSide.classList.remove("open");
   });
 
-  displayMenu();
+  displayMenu(products);
 
   //add item to cart when clicked
   document.querySelectorAll(".add-button").forEach(function (button) {
@@ -172,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function () {
     cart.forEach(function (item) {
       const itemName = item.name;
       const itemPrice = item.price;
-
+      const itemId = item.id;
       if (groupedItems[itemName]) {
         groupedItems[itemName].qty += item.qty;
         groupedItems[itemName].totalPrice += item.qty * itemPrice;
@@ -187,14 +196,14 @@ document.addEventListener("DOMContentLoaded", function () {
     for (const itemName in groupedItems) {
       const itemInfo = groupedItems[itemName];
       const cartItem = document.createElement("li");
-      cartItem.textContent = `${itemName} - $${itemInfo.itemPrice} - ${itemInfo.qty} - $${itemInfo.totalPrice}`;
-
+      cartItem.innerHTML = `<div>${itemName} - $${itemInfo.itemPrice} - ${itemInfo.qty} - $${itemInfo.totalPrice.toFixed(2)}
+      <button onclick="deleteItem(${itemInfo.itemId})"><i class="fa-solid fa-trash"></i></button></div>`;
       cartList.appendChild(cartItem);
       total += itemInfo.totalPrice;
     }
     cartTotal.textContent = `Total: $${total.toFixed(2)}`;
   }
-  //increment button for every an item
+  //increment button for every item
   document.querySelectorAll(".increment").forEach(function (button) {
     button.addEventListener("click", function () {
       const itemQty = button.parentElement.querySelector(".quantity");
@@ -205,7 +214,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  //decrement button for every an item
+  //decrement button for every item
   document.querySelectorAll(".decrement").forEach(function (button) {
     button.addEventListener("click", function () {
       const itemQty = button.parentElement.querySelector(".quantity");

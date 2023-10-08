@@ -53,10 +53,10 @@ public class DatabaseLoader implements CommandLineRunner {
         Menu menu2 = new Menu("Mochas", "This is all the Mochas", "src\\main\\resources\\assets\\coffee_shop_images\\latte1.avif");
         menuService.saveMenu(menu2);
 
-        Product product1 = new Product(5.99,"This is a caramel latte", "Caramel Latte", "src\\main\\resources\\assets\\coffee_shop_images\\chamomiletea.jpeg", menu1);
+        Product product1 = new Product(5.99,"This is a caramel latte", "Caramel Latte", "src\\main\\resources\\assets\\coffee_shop_images\\chamomiletea.jpeg",4, menu1);
         productService.saveProduct(product1);
 
-        Product product2 = new Product(5.99,"This is a mocha latte", "Mocha Latte", "src\\main\\resources\\assets\\coffee_shop_images\\chamomiletea.jpeg", menu2);
+        Product product2 = new Product(5.99,"This is a mocha latte", "Mocha Latte", "src\\main\\resources\\assets\\coffee_shop_images\\chamomiletea.jpeg", 4, menu2);
         productService.saveProduct(product2);
 
     }

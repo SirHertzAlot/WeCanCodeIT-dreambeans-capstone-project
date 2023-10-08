@@ -7,5 +7,6 @@ import com.dreambeans.coffee.models.Product;
 
 @Repository
 public interface ProductsRepository extends CrudRepository<Product, Long> {
+    Iterable<Product> findByMenuId(Long menuId);
 
 }
