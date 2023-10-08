@@ -559,7 +559,7 @@ h2 {
   flex-direction: row;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 895px) {
   .hamburger {
     display: block;
     padding: 10px;
