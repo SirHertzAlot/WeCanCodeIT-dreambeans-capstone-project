@@ -391,7 +391,7 @@ a {
   display: block;
   margin: 25px auto;
   padding: 10px 20px;
-  background-color: #ff5733;
+  background-color: rgb(225, 132, 3);
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -399,7 +399,7 @@ a {
 }
 
 .close-bttn:hover {
-  background-color: #ff0000;
+  background-color: #d74400;
 }
 
 
