@@ -57,6 +57,15 @@ document.addEventListener("DOMContentLoaded", function () {
   
   const itemList = document.getElementsByClassName("item-list")[0];
 
+  // this is calling the api for a menu
+  let products;
+  fetch("http://localhost:8080/api/products/allproducts/1") 
+    .then(response => response.json())
+    .then(products => displayMenu(products)) 
+    .catch(error => console.log(error));
+    
+    
+
   //menu html
 
   function createItemElement(item) {
@@ -102,10 +111,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   //display menu
-  function displayMenu() {
-    console.log(sample_db);
-    sample_db.forEach(function (item) {
-      const qty = item.qty;
+  function displayMenu(products) {
+    console.log("inside the menu",products);
+    products.forEach(function (item) {
+      const qty = item.quantity;
       if (qty > 0) {
         const itemElement = createItemElement(item);
         itemList.appendChild(itemElement);
@@ -128,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
     cartSide.classList.remove("open");
   });
 
-  displayMenu();
+  displayMenu(products);
 
   //add item to cart when clicked
   document.querySelectorAll(".add-button").forEach(function (button) {
