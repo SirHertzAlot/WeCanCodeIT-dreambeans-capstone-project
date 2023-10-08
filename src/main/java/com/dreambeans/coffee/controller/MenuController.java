@@ -3,6 +3,8 @@ package com.dreambeans.coffee.controller;
 import com.dreambeans.coffee.models.Menu;
 import com.dreambeans.coffee.service.MenuService;
 
+import jakarta.servlet.http.HttpServletRequest;
+
 import java.util.Optional;
 
 import org.springframework.http.HttpStatus;
@@ -19,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/api/menu")
-public class MenuController {
+public class MenuController extends CookieController {
 
     private MenuService menuService;
 
@@ -34,9 +36,13 @@ public class MenuController {
      * /api/menu
      * 
      * @return a list of menus
+     * @throws Exception
      */
     @RequestMapping({ "/getAllMenus", "/", "" })
-    public Iterable<Menu> getMenu() {
+    public Iterable<Menu> getMenu(HttpServletRequest request) throws Exception {
+        if (getCookieValue(request) == null) {
+            throw new Exception("not logged in");
+        }
         return menuService.listAllMenu();
     }
 
@@ -45,9 +51,13 @@ public class MenuController {
      * 
      * @param id this is the menu id from the url
      * @return this returns the menu
+     * @throws Exception
      */
     @GetMapping("/{id}")
-    public ResponseEntity<Menu> getByMenuId(@PathVariable Long id) {
+    public ResponseEntity<Menu> getByMenuId(@PathVariable Long id, HttpServletRequest request) throws Exception {
+        if (getCookieValue(request) == null) {
+            throw new Exception("not logged in");
+        }
         Menu menu = null;
         Optional<Menu> menuOP = menuService.findMenuById(id);
         if (menuOP.isPresent()) {
@@ -67,7 +77,10 @@ public class MenuController {
      *         created
      */
     @PostMapping("/save")
-    public ResponseEntity<Menu> saveMenu(@RequestBody Menu menu) {
+    public ResponseEntity<Menu> saveMenu(@RequestBody Menu menu, HttpServletRequest request) throws Exception {
+        if (getCookieValue(request) == null) {
+            throw new Exception("not logged in");
+        }
         menu = menuService.saveMenu(menu);
         if (menu == null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -81,7 +94,10 @@ public class MenuController {
      * @param id this is the Id to be deleted from the repo
      */
     @GetMapping("/delete/{id}")
-    public void deleteMenuById(@PathVariable long id) {
+    public void deleteMenuById(@PathVariable long id, HttpServletRequest request) throws Exception {
+        if (getCookieValue(request) == null) {
+            throw new Exception("not logged in");
+        }
         menuService.deleteMenu(id);
     }
 
@@ -92,7 +108,10 @@ public class MenuController {
      * @return this returns the menu
      */
     @GetMapping("/viewByName/{name}")
-    public ResponseEntity<Menu> getByMenuName(@PathVariable String name) {
+    public ResponseEntity<Menu> getByMenuName(@PathVariable String name, HttpServletRequest request) throws Exception {
+        if (getCookieValue(request) == null) {
+            throw new Exception("not logged in");
+        }
         Menu menu = menuService.findName(name);
         if (menu == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
