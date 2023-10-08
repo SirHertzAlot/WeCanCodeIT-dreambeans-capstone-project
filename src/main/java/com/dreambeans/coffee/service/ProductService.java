@@ -14,8 +14,8 @@ public class ProductService {
     @Resource
     private ProductsRepository productRepo;
 
-    public Iterable<Product> listAllProducts(Long menuId) {
-        return productRepo.findAll();
+    public Iterable<Product> listProductsByMenuId(Long menuId) {
+        return productRepo.findByMenuId(menuId);
     }
 
     public Optional<Product> findProductsById(Long id) {
@@ -30,4 +30,13 @@ public class ProductService {
         productRepo.deleteById(id);
     }
 
+        public Iterable<Product> listAllProducts() {
+        return productRepo.findAll();
+    } 
+
 }
+
+
+
+
+
