@@ -79,8 +79,8 @@ const inventoryData = [
     listItemPrice.innerHTML = `<span>${item.price}</span>`;
     listItemQty.innerHTML = `<span>${item.qty}</span>`;
     listItemAction.innerHTML = `
-    <button onclick="editItem(${item.id})">Edit</button>
-    <button onclick="deleteItem(${item.id})">Delete</button>`;
+    <button onclick="editItem(${item.id})"><i class="fa-solid fa-pen-to-square"></i></button>
+    <button onclick="deleteItem(${item.id})"><i class="fa-solid fa-trash"></i></button>`;
     inventoryID.appendChild(listItemId);
     inventoryName.appendChild(listItemName);
     inventoryPrice.appendChild(listItemPrice);

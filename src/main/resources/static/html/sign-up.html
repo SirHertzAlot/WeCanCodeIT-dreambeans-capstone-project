@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 
@@ -14,19 +15,19 @@
         <nav class="navbar">
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="../index.html" class="link">Home</a>
+                    <a href="../index.html" class="link"><h1>Home</h1></a>
                 </li>
                 <li class="nav-item">
-                    <a href="menu.html" class="link">Menu</a>
+                    <a href="menu.html" class="link"><h1>Menu</h1></a>
                 </li>
                 <li class="nav-item">
-                    <a href="contact.html" class="link">Contact</a>
+                    <a href="contact.html" class="link"><h1>Contact</h1></a>
                 </li>
                 <li class="nav-item">
-                    <a href="about.html" class="link">About</a>
+                    <a href="about.html" class="link"><h1>About</h1></a>
                 </li>
                 <li class="nav-item">
-                    <a href="sign-in.html" class="link">Sign In</a>
+                    <a href="sign-in.html" class="link"><h1>Sign In</h1></a>
                 </li>
             </ul>
             <div class="hamburger">
@@ -42,35 +43,33 @@
             </div>
         </nav>
     </header>
-    <div class="main-content">
-        <div class="side-section"></div>
-        <div class="mid-section">
-            <div>
-                <h4>Welcome to Dream Bean Cafe</h4>
-                <br>
+    <div class="background-img">
+        <div class="main-content">
+            <div class="side-section"></div>
+            <div class="mid-section">
+                <h4 class="title">Welcome to Dream Bean Cafe</h4>
+                <div class="username">
+                    <label for="name">Email: </label>
+                    <br>
+                    <input type="text" name="user name" id="username" required />
+                </div>
+                <div class="password">
+                    <label for="password">Password: </label>
+                    <br>
+                    <input type="text" name="password" id="password" required />
+                </div>
+                <div class="name">
+                    <label for="name">Name: </label>
+                    <br>
+                    <input type="text" name="name" id="name" required />
+                </div>
+                <div class="sign-up">
+                    <a href="sign-up.html" type="submit">Sign Up</a>
+                </div>
             </div>
-            <div class="username">
-                <label for="name">Email: </label>
-                <br>
-                <input type="text" name="user name" id="username" required />
-            </div>
-            <div class="password">
-                <label for="password">Password: </label>
-                <br>
-                <input type="text" name="password" id="password" required />
-            </div>
-            <div class="name">
-                <label for="name">Name: </label>
-                <br>
-                <input type="text" name="name" id="name" required />
-            </div>
-            <div class="sign-up">
-                <a href="sign-up.html" type="submit">Sign Up</a>
-            </div>
+            <div class="side-section"></div>
         </div>
-        <div class="side-section"></div>
     </div>
-
     <aside class="cart-side">
         <div class="cart-content">
             <div class="cart-title">Your Cart</div>
