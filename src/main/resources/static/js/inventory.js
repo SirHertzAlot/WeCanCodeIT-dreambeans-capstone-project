@@ -59,7 +59,7 @@ const inventoryData = [
 
 // this is calling the api for the inventory
 let products;
-fetch("http://localhost:8080/api/products/allproducts/2")
+fetch("http://localhost:8080/api/products/allproducts")
   .then((response) => response.json())
   .then((products) => displayMenu(products))
   .catch((error) => console.log(error));
