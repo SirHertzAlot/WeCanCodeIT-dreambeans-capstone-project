@@ -47,17 +47,72 @@ public class DatabaseLoader implements CommandLineRunner {
         cartService.saveCart(cart2);
 
 
-        Menu menu1 = new Menu("Lattes", "This is all the Lattes", "src\\main\\resources\\assets\\coffee_shop_images\\latte1.avif");
+        Menu menu1 = new Menu("Hot Coffee", "This is all the Hot Coffee", "../img/latte.jpg");
         menuService.saveMenu(menu1);
 
-        Menu menu2 = new Menu("Mochas", "This is all the Mochas", "src\\main\\resources\\assets\\coffee_shop_images\\latte1.avif");
+        Menu menu2 = new Menu("Iced Coffee", "This is all Iced Coffee", "../img/iced_mocha.jpeg");
         menuService.saveMenu(menu2);
 
-        Product product1 = new Product(5.99,"This is a caramel latte", "Caramel Latte", "../img/latte1.avif",4, menu1);
-        productService.saveProduct(product1);
+        Menu menu3 = new Menu("Hot Tea", "This is all Hot Tea", "../img/chamomiletea.jpeg");
+        menuService.saveMenu(menu3);
 
-        Product product2 = new Product(5.99,"This is a mocha latte", "Mocha Latte", "../img/mocha.avif", 4, menu2);
-        productService.saveProduct(product2);
+        Menu menu4 = new Menu("Pastries", "This is all Pastries", "../img/scone.jpeg");
+        menuService.saveMenu(menu4);
+
+
+        Product Americano = new Product (4.50,"Espresso diluted with hot water.", "Americano", "../img/Americano1.jpeg",4,menu1);
+        productService.saveProduct(Americano);
+
+        Product Espresso = new Product(4,"A shot of pure, intense coffee.", "Espresso", "../img/espresso1.avif", 4, menu1);
+        productService.saveProduct(Espresso);
+
+        Product Cappuccino = new Product(5,"Espresso, steamed milk, and foam.", "Cappuccino", "../img/cappuccino1.avif", 4, menu1);
+        productService.saveProduct(Cappuccino);
+
+        Product Latte = new Product(6,"Espresso with steamed milk and a small amount of foam.", "Latte", "../img/latte.jpg", 4, menu1);
+        productService.saveProduct(Latte);
+
+        Product Mocha = new Product(6,"Espresso with steamed milk, chocolate, and whipped cream.", "Mocha", "../img/mocha.avif", 4, menu1);
+        productService.saveProduct(Mocha);
+
+        Product Machiato = new Product(5,"Espresso \"stained\" with a dollop of frothy milk.", "Machiato", "../img/machiato.avif", 4, menu1);
+        productService.saveProduct(Machiato);
+
+        Product Cold_Brew = new Product(5,"Smooth and strong coffee brewed cold, served over ice.", "Cold Brew", "../img/cold_brew.avif", 4, menu2);
+        productService.saveProduct(Cold_Brew);
+
+        Product Iced_Mocha = new Product(5,"Espresso with steamed milk, chocolate, and whipped cream in ice", "Iced Mocha", "../img/iced_mocha.jpeg", 4, menu2);
+        productService.saveProduct(Iced_Mocha);
+
+        Product Iced_Coffee = new Product(4,"Chilled coffee served over ice.", "Iced Coffee", "../img/icedcoffee.avif", 4, menu2);
+        productService.saveProduct(Iced_Coffee);
+
+        Product Iced_Latte = new Product(6,"Espresso, cold milk, and ice.", "Iced Latte", "../img/icedlatte.avif", 4, menu2);
+        productService.saveProduct(Iced_Latte);
+
+        Product Iced_Americano = new Product(4.50,"Espresso with cold water over ice.", "Iced Americano", "../img/icedamericano.avif", 4, menu2);
+        productService.saveProduct(Iced_Americano);
+
+        Product Black_Tea = new Product(3.50,"Hot Tea.", "Black Tea", "../img/black_tea.jpeg", 4, menu3);
+        productService.saveProduct(Black_Tea);
+
+        Product Green_Tea = new Product(3.50,"Hot Tea.", "Green Tea", "../img/greentea.jpeg", 4, menu3);
+        productService.saveProduct(Green_Tea);
+
+        Product Chai_Tea = new Product(3.50,"Hot Tea.", "Chai Tea", "../img/chaitea.jpeg", 4, menu3);
+        productService.saveProduct(Chai_Tea);
+
+        Product Chamomile_Tea = new Product(3.50,"Hot Tea.", "Chamomile Tea", "../img/chamomiletea.jpeg", 4, menu3);
+        productService.saveProduct(Chamomile_Tea);
+
+        Product Muffin = new Product(3,"Pastries.", "Muffin", "../img/muffins.avif", 4, menu4);
+        productService.saveProduct(Muffin);
+
+        Product Scone = new Product(3,"Pastries", "Scone", "../img/scone.jpeg", 4, menu4);
+        productService.saveProduct(Scone);
+
+        Product Cookie = new Product(1.50,"Pastries", "Cookie", "../img/cookie.avif", 4, menu4);
+        productService.saveProduct(Cookie);
 
     }
 }
