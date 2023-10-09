@@ -115,7 +115,8 @@ function displayInventory(products) {
         name: newItem.querySelector("itemName").value,
         image: newItem.querySelector(".itemImage").value,
         quantity: newItem.querySelector("itemQuantity").value,
-        menuId: '0',
+        menuId: newItem.querySelector("itemMenuId").value,
+        
       };
       console.log(itemJson);
       fetch("http://localhost:8080/api/products/save", {
