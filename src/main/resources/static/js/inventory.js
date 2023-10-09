@@ -59,9 +59,15 @@ const inventoryData = [
 
 // this is calling the api for the inventory
 let products;
+<<<<<<< HEAD
 fetch("http://localhost:8080/api/products/allproducts")
   .then((response) => response.json())
   .then((products) => displayInventory(products))
+=======
+fetch("http://localhost:8080/api/products/allproducts/2")
+  .then((response) => response.json())
+  .then((products) => displayMenu(products))
+>>>>>>> 76ef261bd02dc5419b6cbfcae2b2f8a7909f40f4
   .catch((error) => console.log(error));
 
 const inventoryID = document.getElementsByClassName("inventory-id")[0];
@@ -71,7 +77,11 @@ const inventoryQTY = document.getElementsByClassName("inventory-qty")[0];
 const inventoryAction = document.getElementsByClassName("inventory-action")[0];
 function displayInventory(products) {
   console.log(products);
+<<<<<<< HEAD
   products.forEach((item) => {
+=======
+  inventoryData.forEach((item) => {
+>>>>>>> 76ef261bd02dc5419b6cbfcae2b2f8a7909f40f4
     const listItemId = document.createElement("li");
     listItemId.classList.add("inventory-item-id");
     const listItemName = document.createElement("li");
@@ -95,6 +105,7 @@ function displayInventory(products) {
     inventoryQTY.appendChild(listItemQty);
     inventoryAction.appendChild(listItemAction);
   });
+<<<<<<< HEAD
 
   const newItem = document.createElement("Item");
   newItem.innerHTML = `
@@ -131,3 +142,7 @@ function displayInventory(products) {
         .catch((error) => console.log(error));
     });
 }
+=======
+}
+displayInventory();
+>>>>>>> 76ef261bd02dc5419b6cbfcae2b2f8a7909f40f4
