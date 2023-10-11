@@ -18,6 +18,13 @@ function displayInventory(products) {
     const listItemId = document.createElement("li");
     listItemId.classList.add("inventory-item-id");
     const listItemName = document.createElement("li");
+    listItemName.classList.add("inventory-item-name");
+    const listItemPrice = document.createElement("li");
+    listItemPrice.classList.add("inventory-item-price");
+    const listItemQty = document.createElement("li");
+    listItemQty.classList.add("inventory-item-qty");
+    const listItemAction = document.createElement("li");
+    listItemAction.classList.add("inventory-item-action");
     listItemId.innerHTML = `<span>${item.id}</span>`;
     listItemName.innerHTML = `<span>${item.name}</span>`;
     listItemPrice.innerHTML = `<span>${item.price}</span>`;
@@ -25,6 +32,9 @@ function displayInventory(products) {
     listItemAction.innerHTML = `
     <button onclick="editItem(${item.id})"><i class="fa-solid fa-pen-to-square"></i></button>
     <button onclick="deleteItem(${item.id})"><i class="fa-solid fa-trash"></i></button>`;
+    inventoryID.appendChild(listItemId);
+    inventoryName.appendChild(listItemName);
+    inventoryPrice.appendChild(listItemPrice);
     inventoryQTY.appendChild(listItemQty);
     inventoryAction.appendChild(listItemAction);
   });
