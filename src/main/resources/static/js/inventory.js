@@ -75,5 +75,3 @@ function displayInventory(products) {
         .catch((error) => console.log(error));
     });
 }
-
-}
