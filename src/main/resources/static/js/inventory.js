@@ -1,5 +1,4 @@
 
-
 // this is calling the api for the inventory
 let products;
 fetch("http://localhost:8080/api/products/allproducts")
