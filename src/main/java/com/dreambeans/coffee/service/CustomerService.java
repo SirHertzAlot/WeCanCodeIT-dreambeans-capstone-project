@@ -12,6 +12,19 @@ public class CustomerService {
     @Resource
     private CustomerRepository customerRepository;
 
+    public Customer findByUserName(String name){
+        return customerRepository.findByUserName(name);
+    }
+
+    /**
+     * This function is used to delete customers.
+     * @param id This is the id of the customer.
+     */
+    public void deleteCustomerById(Long id){
+        customerRepository.deleteById(id);
+    }
+
+
     public Customer saveCustomer(Customer customer){ return customerRepository.save(customer); }
 
     public Iterable<Customer> listAllCustomer() {

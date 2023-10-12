@@ -372,10 +372,23 @@ a {
 }
 
 .cart-title {
+  display: flex;
   font-size: 24px;
   margin-bottom: 10px;
+  justify-content: end;
 }
-
+.cart-title h3{
+  
+  font-family: 'Roboto Slab', serif;
+flex: 1;
+}
+.close-bttn{
+  border: none;
+  background-color: transparent;
+}
+.close-bttn:hover{
+color: #d74400;
+}
 .cart-item {
   margin-bottom: 10px;
   font-size: 16px;
@@ -387,7 +400,7 @@ a {
   text-align: right;
 }
 
-.close-bttn {
+.checkout-bttn{
   display: block;
   margin: 25px auto;
   padding: 10px 20px;
@@ -398,7 +411,7 @@ a {
   cursor: pointer;
 }
 
-.close-bttn:hover {
+ .checkout-bttn:hover{
   background-color: #d74400;
 }
 
