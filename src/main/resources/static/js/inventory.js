@@ -1,61 +1,4 @@
-const inventoryData = [
-  {
-    id: 1,
-    name: "Item 1",
-    price: 10.35,
-    qty: 0,
-    image: "../img/dream bean.png",
-  },
-  {
-    id: 2,
-    name: "Item 2",
-    price: 10.99,
-    qty: 2,
-    image: "../img/dream bean.png",
-  },
-  {
-    id: 3,
-    name: "Item 3",
-    price: 20.35,
-    qty: 3,
-    image: "../img/dream bean.png",
-  },
-  {
-    id: 3,
-    name: "Item 3",
-    price: 20.35,
-    qty: 1,
-    image: "../img/dream bean.png",
-  },
-  {
-    id: 3,
-    name: "Item 3",
-    price: 20.35,
-    qty: 0,
-    image: "../img/dream bean.png",
-  },
-  {
-    id: 3,
-    name: "Item 3",
-    price: 20.35,
-    qty: 3,
-    image: "../img/dream bean.png",
-  },
-  {
-    id: 3,
-    name: "Item 3",
-    price: 20.35,
-    qty: 1,
-    image: "../img/dream bean.png",
-  },
-  {
-    id: 3,
-    name: "Item 3",
-    price: 20.35,
-    qty: 0,
-    image: "../img/dream bean.png",
-  },
-];
+
 
 // this is calling the api for the inventory
 let products;
@@ -69,6 +12,7 @@ const inventoryName = document.getElementsByClassName("inventory-name")[0];
 const inventoryPrice = document.getElementsByClassName("inventory-price")[0];
 const inventoryQTY = document.getElementsByClassName("inventory-qty")[0];
 const inventoryAction = document.getElementsByClassName("inventory-action")[0];
+
 function displayInventory(products) {
   console.log(products);
   products.forEach((item) => {
@@ -116,7 +60,7 @@ function displayInventory(products) {
         image: newItem.querySelector(".itemImage").value,
         quantity: newItem.querySelector("itemQuantity").value,
         menuId: newItem.querySelector("itemMenuId").value,
-        
+
       };
       console.log(itemJson);
       fetch("http://localhost:8080/api/products/save", {
@@ -130,4 +74,6 @@ function displayInventory(products) {
         .then((products) => displayInventory(products))
         .catch((error) => console.log(error));
     });
+}
+
 }

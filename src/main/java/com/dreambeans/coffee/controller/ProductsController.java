@@ -25,17 +25,17 @@ public class ProductsController extends CookieController {
 
     @GetMapping("/allproducts/{menuId}")
     public Iterable<Product> getAllProducts(@PathVariable Long menuId, HttpServletRequest request) throws Exception {
-        if (getCookieValue(request) == null) {
-            throw new Exception("not logged in");
-        }
+        // if (getCookieValue(request) == null) {
+        //     throw new Exception("not logged in");
+        // }
         return productService.listProductsByMenuId(menuId);
     }
 
     @GetMapping("/allproducts")
     public Iterable<Product> getAllProducts(HttpServletRequest request) throws Exception {
-        if (getCookieValue(request) == null) {
-            throw new Exception("not logged in");
-        }
+        // if (getCookieValue(request) == null) {
+        //     throw new Exception("not logged in");
+        // }
         return productService.listAllProducts();
     }
 

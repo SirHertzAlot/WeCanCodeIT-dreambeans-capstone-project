@@ -1,41 +1,3 @@
-//example db
-const products= [
-  {
-    id: 1,
-    name: "Item 1",
-    price: 10.35,
-    quantity: 0,
-    image: "../img/dream bean.png",
-  },
-  {
-    id: 2,
-    name: "Item 2",
-    price: 10.99,
-    quantity: 2,
-    image: "../img/dream bean.png",
-  },
-  {
-    id: 3,
-    name: "Item 3",
-    price: 20.35,
-    quantity: 3,
-    image: "../img/dream bean.png",
-  },
-  {
-    id: 3,
-    name: "Item 3",
-    price: 20.35,
-    quantity: 1,
-    image: "../img/dream bean.png",
-  },
-  {
-    id: 3,
-    name: "Item 3",
-    price: 20.35,
-    quantity: 0,
-    image: "../img/dream bean.png",
-  },
-];
 
 //nav hamburger menu
 document.addEventListener("DOMContentLoaded", function () {
@@ -87,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
     itemDesc.appendChild(itemName);
     const itemPrice = document.createElement("div");
     itemPrice.classList.add("item-price");
-    itemPrice.innerHTML = `$${item.price}`;
+    itemPrice.innerHTML = `$${item.price.toFixed(2)}`;
     itemDesc.appendChild(itemPrice);
     const itemQty = document.createElement("div");
     itemQty.classList.add("item-qty");
@@ -129,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // this is calling the api for a menu
   // let products;
-  fetch("http://localhost:8080/api/products/allproducts")
+  fetch("http://localhost:8080/api/products/allproducts/1")
     .then((response) => response.json())
     .then((data) =>{
       products = data;
@@ -195,7 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
     for (const itemName in groupedItems) {
       const itemInfo = groupedItems[itemName];
       const cartItem = document.createElement("li");
-      cartItem.innerHTML = `<div>${itemName} - $${itemInfo.itemPrice} - ${
+      cartItem.innerHTML = `<div>${itemName} - $${itemInfo.itemPrice.toFixed(2)} - ${
         itemInfo.qty
       } - $${itemInfo.totalPrice.toFixed(2)}
       <button onclick="deleteItem(${
