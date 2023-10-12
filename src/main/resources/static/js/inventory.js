@@ -11,7 +11,6 @@ const inventoryName = document.getElementsByClassName("inventory-name")[0];
 const inventoryPrice = document.getElementsByClassName("inventory-price")[0];
 const inventoryQTY = document.getElementsByClassName("inventory-qty")[0];
 const inventoryAction = document.getElementsByClassName("inventory-action")[0];
-
 function displayInventory(products) {
   console.log(products);
   products.forEach((item) => {
