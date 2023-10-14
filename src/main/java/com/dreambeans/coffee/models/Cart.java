@@ -23,14 +23,13 @@ public class Cart {
     @ManyToOne
     private Customer customer;
 
-
     public Cart() {
     }
 
     public Cart(Customer customer) {
         this.customer = customer;
         this.timeCartWasCreated = LocalDate.now().toString();
-     }
+    }
 
     public String getOrderedTime() {
         return orderedTime;
@@ -87,8 +86,6 @@ public class Cart {
     public String getTimeCartWasCreated() {
         return timeCartWasCreated;
     }
-
-
 
     public boolean cartPaid() {
         return true;

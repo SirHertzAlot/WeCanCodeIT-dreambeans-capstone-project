@@ -31,7 +31,7 @@ a {
   color: black;
   text-decoration: none;
 }
-a :hover{
+a :hover {
   cursor: pointer;
 }
 
@@ -46,8 +46,8 @@ a :hover{
   align-items: center;
   padding: 0 24px;
 }
-.navbar h1{
-  font-family: 'Roboto Slab', serif;
+.navbar h1 {
+  font-family: "Roboto Slab", serif;
 }
 .nav-menu {
   list-style: none;
@@ -118,7 +118,7 @@ a :hover{
   width: 100%;
   min-height: 100vh;
   display: flex;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
 }
 .index-page:before {
   content: "";
@@ -144,7 +144,7 @@ a :hover{
   align-items: center;
   display: flex;
   color: rgb(255, 255, 255, 0.9);
-  font-family: 'Cinzel', serif;
+  font-family: "Cinzel", serif;
   font-size: 25px;
   flex-direction: column;
   padding: 80px 30px;
@@ -154,14 +154,18 @@ a :hover{
   width: 250px;
 }
 
-.username, .password, .name{
+.username,
+.password,
+.name {
   margin: auto;
   text-align: center;
   font-weight: 400;
   padding: 5px 6px;
 }
 
-#username, #password, #name  {
+#username,
+#password,
+#name {
   width: 85%;
   height: 35px;
   text-align: center;
@@ -209,7 +213,7 @@ a :hover{
   width: 400px;
   background-color: rgb(150, 108, 63);
   border-radius: 20px;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   font-size: larger;
   padding: 30px;
   color: #ffffff;
@@ -377,17 +381,16 @@ a {
   margin-bottom: 10px;
   justify-content: end;
 }
-.cart-title h3{
-  
-  font-family: 'Roboto Slab', serif;
-flex: 1;
+.cart-title h3 {
+  font-family: "Roboto Slab", serif;
+  flex: 1;
 }
-.close-bttn{
+.close-bttn {
   border: none;
   background-color: transparent;
 }
-.close-bttn:hover{
-color: #d74400;
+.close-bttn:hover {
+  color: #d74400;
 }
 .cart-item {
   margin-bottom: 10px;
@@ -400,7 +403,7 @@ color: #d74400;
   text-align: right;
 }
 
-.checkout-bttn{
+.checkout-bttn {
   display: block;
   margin: 25px auto;
   padding: 10px 20px;
@@ -411,10 +414,9 @@ color: #d74400;
   cursor: pointer;
 }
 
- .checkout-bttn:hover{
+.checkout-bttn:hover {
   background-color: #d74400;
 }
-
 
 .title {
   text-align: center;
@@ -519,54 +521,54 @@ form button {
 
 .about-us h1,
 h2 {
-  font-family: 'Cinzel', serif;
+  font-family: "Cinzel", serif;
   margin: 30px;
   padding: 20px;
   text-align: center;
 }
-.contact-page{
+.contact-page {
   display: flex;
   flex-direction: column;
   padding: 10px;
   align-items: center;
   margin: 10px 10px;
 }
-.contact-page h1{
+.contact-page h1 {
   background-color: rgb(255, 255, 255, 0.7);
   padding: 10px;
   border-radius: 20px;
 }
-.contact-us{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.contact-us {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
-.team-member{
+.team-member {
   background-color: rgb(255, 255, 255, 0.8);
   width: 380px;
   margin: 10px;
   border-radius: 20px;
   height: 200px;
 }
-.team-member h2{
-  font-family: 'Cinzel', serif;
+.team-member h2 {
+  font-family: "Cinzel", serif;
   margin: 30px;
   padding: 20px;
   margin-bottom: 0;
   padding-bottom: 0;
   text-align: center;
 }
-.team-member p{
-  font-family: 'Cinzel', serif;
+.team-member p {
+  font-family: "Cinzel", serif;
   margin-bottom: 30px;
   text-align: center;
 }
-.team-member i{
+.team-member i {
   width: 100px;
 }
-.soc-med{
+.soc-med {
   justify-content: center;
   display: flex;
   flex-direction: row;
@@ -613,13 +615,13 @@ h2 {
     height: 450px;
     background-color: rgb(150, 108, 63, 0.9);
     border-radius: 20px;
-    font-family: 'Roboto Slab', serif;
+    font-family: "Roboto Slab", serif;
     font-size: larger;
   }
-  .side-section{
+  .side-section {
     width: 1%;
   }
-  .contact-page{
+  .contact-page {
     height: 100%;
   }
 }
