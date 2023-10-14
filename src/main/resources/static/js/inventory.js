@@ -26,7 +26,7 @@ function displayInventory(products) {
     listItemAction.classList.add("inventory-item-action");
     listItemId.innerHTML = `<span>${item.id}</span>`;
     listItemName.innerHTML = `<span>${item.name}</span>`;
-    listItemPrice.innerHTML = `<span>${item.price}</span>`;
+    listItemPrice.innerHTML = `<span>${item.price.toFixed(2)}</span>`;
     listItemQty.innerHTML = `<span>${item.quantity}</span>`;
     listItemAction.innerHTML = `
     <button onclick="editItem(${item.id})"><i class="fa-solid fa-pen-to-square"></i></button>
