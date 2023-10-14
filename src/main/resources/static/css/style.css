@@ -437,7 +437,7 @@ color: #d74400;
 .inventory-qty,
 .inventory-price,
 .inventory-action {
-  width: 140px;
+  width: 150px;
   list-style: none;
   max-width: 600px;
   padding: 0;
