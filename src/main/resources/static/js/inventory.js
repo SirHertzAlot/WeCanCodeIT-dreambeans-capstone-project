@@ -1,5 +1,4 @@
 
-
 // this is calling the api for the inventory
 let products;
 fetch("http://localhost:8080/api/products/allproducts")
@@ -12,7 +11,6 @@ const inventoryName = document.getElementsByClassName("inventory-name")[0];
 const inventoryPrice = document.getElementsByClassName("inventory-price")[0];
 const inventoryQTY = document.getElementsByClassName("inventory-qty")[0];
 const inventoryAction = document.getElementsByClassName("inventory-action")[0];
-
 function displayInventory(products) {
   console.log(products);
   products.forEach((item) => {
@@ -74,6 +72,4 @@ function displayInventory(products) {
         .then((products) => displayInventory(products))
         .catch((error) => console.log(error));
     });
-}
-
 }
