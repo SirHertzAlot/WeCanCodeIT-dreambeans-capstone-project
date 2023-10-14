@@ -1,4 +1,3 @@
-
 // this is calling the api for the inventory
 let products;
 fetch("http://localhost:8080/api/products/allproducts")
@@ -51,14 +50,13 @@ function displayInventory(products) {
       console.log("clicked to add item");
       // clearChildren(mainContent);
       const itemJson = {
-        id: '0',
+        id: "0",
         price: newItem.querySelector("itemPrice").value,
         description: newItem.querySelector("itemDesc").value,
         name: newItem.querySelector("itemName").value,
         image: newItem.querySelector(".itemImage").value,
         quantity: newItem.querySelector("itemQuantity").value,
         menuId: newItem.querySelector("itemMenuId").value,
-
       };
       console.log(itemJson);
       fetch("http://localhost:8080/api/products/save", {

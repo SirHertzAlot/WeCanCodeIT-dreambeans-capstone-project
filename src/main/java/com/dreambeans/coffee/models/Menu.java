@@ -4,9 +4,6 @@ import jakarta.persistence.*;
 
 import java.util.Collection;
 
-
-
-
 @Entity
 public class Menu {
 
@@ -16,10 +13,6 @@ public class Menu {
 
     protected String name;
 
-  
-
-  
-
     protected String description;
 
     protected String image;
@@ -27,21 +20,17 @@ public class Menu {
     @OneToMany(mappedBy = "menu", orphanRemoval = true)
     private Collection<Product> products;
 
-
-
     public Menu() {
     }
 
     public Menu(String name, String description, String image) {
         this.name = name;
-        
+
         this.description = description;
         this.image = image;
-        
+
     }
 
-   
-    
     public long getId() {
         return id;
     }
@@ -57,8 +46,6 @@ public class Menu {
     public void setName(String name) {
         this.name = name;
     }
-
-
 
     public String getDescription() {
         return description;
